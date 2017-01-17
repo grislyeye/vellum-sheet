@@ -2,309 +2,144 @@
 <html>
 
   <head>
-    <title>Stat Block Example</title>
+    <title>Character Sheet Example</title>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="dnd-stat-block.html">
-    <link rel="import" href="themes/monster-manual/monster-manual-theme.html">
-    <style is="custom-style" include="monster-manual-theme"></style>
+    <link rel="import" href="dnd-char-sheet.html">
   </head>
 
   <body>
 
     <section>
-      <h1>Default Stat Block</h1>
+      <h1>Default Character Sheet</h1>
 
-      <dnd-stat-block id="gynosphinx" str="18" dex="15" con="16" int="18" wis="18" cha="18">
+      <dnd-char-sheet id="empty" itemscope itemtype="http://rgladwell.github.io/dnd-schemas/character.html" style="width: 750px; margin-bottom: 20px">
+      </dnd-char-sheet>
 
-        <header>
-          <h1>Gynosphinx</h1>
-          <p>Large monstrosity, lawful neutral</p>
-        </header>
-
-        <combat-stats>
-          <dl>
-            <dt>Armor Class</dt><dd>17 (natural armor)</dd>
-            <dt>Hit Points</dt><dd>136 (16d10 + 48)</dd>
-            <dt>Speed</dt><dd>40 ft., fly 60 ft.</dd>
-          </dl>
-        </combat-stats>
-
-        <ability-scores>
-          <dl>
-            <dt>Strength</dt><dd>18 (+4)</dd>
-            <dt>Dexterity</dt><dd>15 (+2)</dd>
-            <dt>Constitution</dt><dd>16 (+3)</dd>
-            <dt>Intelligence</dt><dd>18 (+4)</dd>
-            <dt>Wisdom</dt><dd>18 (+4)</dd>
-            <dt>Charisma</dt><dd>18 (+4)</dd>
-          </dl>
-        </ability-scores>
-
-        <stats>
-          <dl>
-            <dt>Skills</dt><dd>Arcana +14, History +14, Perception +9, Religion +9</dd>
-            <dt>Damage Resistances</dt><dd>bludgeoning, piercing, and slashing from nonmagical items</dd>
-            <dt>Damage Immunities</dt><dd>psychic</dd>
-            <dt>Condition Immunities</dt><dd>charmed, frightened</dd>
-            <dt>Senses</dt><dd>truesight 120 ft., passive Perception 18</dd>
-            <dt>Languages</dt><dd>Common, Sphinx</dd>
-            <dt>Challenge</dt><dd>11 (7,200 XP)</dd>
-          </dl>
-        </stats>
-
-        <special-traits>
-          <dl>
-
-            <dt>Inscrutable.</dt>
-            <dd>The sphinx is immune to any effect that would sense its emotions or read its thoughts, as well as any Divination spell that it refuses. Wisdom (Insight) checks made to ascertain the sphinx's intentions or sincerity have disadvantage.</dd>
-
-            <dt>Magic Weapons.</dt>
-            <dd>The sphinx's weapon attacks are magical.</dd>
-
-            <dt>Spellcasting.</dt>
-            <dd>
-              The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its Spells. The sphinx has the following Wizard Spells prepared:
-              <ol>
-                <li>Cantrips (at will): <em>mage hand, minor illusion, prestidigitation</em></li>
-                <li>1st Level (4 slots): <em>detect magic, identigy, shield</em></li>
-                <li>2nd Level (3 slots): <em>darkness, locate object, suggestion</em></li>
-                <li>3rd Level (3 slots): <em>dispel magic, remove curse, tongues</em></li>
-                <li>4th Level (3 slots): <em>banishment, greater invisibility</em></li>
-                <li>5th Level (1 slot): <em>legend lore</em></li>
-              </ol>
-            </dd>
-
-          </dl>
-        </special-traits>
-
-        <actions>
-          <h2>Actions</h2>
-          <dl>
-            <dt>Multiattack.</dt>
-            <dd>The sphinx makes two claw attacks.</dd>
-            <dt>Claw.</dt>
-            <dd><em>Melee Weapon Attack:</em> +9 to hit, reach 5 ft., one target. <em>Hit:</em> 13 (2d8 + 4) slashing damage.</dd>
-          </dl>
-        </actions>
-
-        <legendary-actions>
-
-          <h2>Legendary Actions</h2>
-
-          <p>Can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time, and only at the end of another creature's turn. Spent legendary actions are regained at the start of each turn.</p>
-
-          <ol>
-
-            <li><strong>Claw Attack.</strong> The sphinx makes one claw attack.</li>
-
-            <li><strong>Teleport (Costs 2 Actions).</strong> The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.
-</li>
-
-            <li><strong>Cast a Spell (Costs 3 Actions).</strong> The sphinx casts a spell from its list of prepared Spells, using a spell slot as normal.</li>
-
-          </ol>
-
-        </legendary-actions>
-
-      </dnd-stat-block>
-
-      <dnd-stat-block id="gynosphinx" class="monster-manual" str="18" dex="15" con="16" int="18" wis="18" cha="18">
+      <dnd-char-sheet id="bruenor" itemscope itemtype="http://rgladwell.github.io/dnd-schemas/character.html" style="width: 750px;">
 
         <header>
-          <h1>Gynosphinx</h1>
-          <p>Large monstrosity, lawful neutral</p>
+          <h1 itemprop="name">Bruenor</h1>
         </header>
 
-        <combat-stats>
+        <section>
           <dl>
-            <dt>Armor Class</dt><dd>17 (natural armor)</dd>
-            <dt>Hit Points</dt><dd>136 (16d10 + 48)</dd>
-            <dt>Speed</dt><dd>40 ft., fly 60 ft.</dd>
+            <dt>Class</dt><dd itemprop="class">Fighter</dd>
+            <dt>Level</dt><dd itemprop="level">1</dd>
+            <dt>Race</dt><dd itemprop="race">Mountain Dwarf</dd>
+            <dt>Background</dt><dd itemprop="background">Folk Hero</dd>
+            <dt>Alignment</dt><dd itemprop="alignment">Lawful good</dd>
           </dl>
-        </combat-stats>
+        </section>
 
-        <ability-scores>
+        <section>
           <dl>
-            <dt>Strength</dt><dd>18 (+4)</dd>
-            <dt>Dexterity</dt><dd>15 (+2)</dd>
-            <dt>Constitution</dt><dd>16 (+3)</dd>
-            <dt>Intelligence</dt><dd>18 (+4)</dd>
-            <dt>Wisdom</dt><dd>18 (+4)</dd>
-            <dt>Charisma</dt><dd>18 (+4)</dd>
+            <dt>Strength</dt><dd itemprop="strength">15</dd>
+            <dt>Dexterity</dt><dd itemprop="dexterity">10</dd>
+            <dt>Constitution</dt><dd itemprop="constitution">14</dd>
+            <dt>Intelligence</dt><dd itemprop="intelligence">8</dd>
+            <dt>Wisdom</dt><dd itemprop="wisdom">13</dd>
+            <dt>Charisma</dt><dd itemprop="charisma">12</dd>
           </dl>
-        </ability-scores>
+        </section>
 
-        <stats>
-          <dl>
-            <dt>Skills</dt><dd>Arcana +14, History +14, Perception +9, Religion +9</dd>
-            <dt>Damage Resistances</dt><dd>bludgeoning, piercing, and slashing from nonmagical items</dd>
-            <dt>Damage Immunities</dt><dd>psychic</dd>
-            <dt>Condition Immunities</dt><dd>charmed, frightened</dd>
-            <dt>Senses</dt><dd>truesight 120 ft., passive Perception 18</dd>
-            <dt>Languages</dt><dd>Common, Sphinx</dd>
-            <dt>Challenge</dt><dd>11 (7,200 XP)</dd>
-          </dl>
-        </stats>
+        <section>
+          <ul>
+            <li itemprop="skills">Animal Handling</li>
+            <li itemprop="skills">History</li>
+            <li itemprop="skills">Intimidation</li>
+            <li itemprop="skills">Survival</li>
+          </ul>
+        </section>
 
-        <special-traits>
-          <dl>
+        <section>
+          <ul>
+            <li itemprop="saving-throws">Strength</li>
+            <li itemprop="saving-throws">Constitution</li>
+          </ul>
+        </section>
 
-            <dt>Inscrutable.</dt>
-            <dd>The sphinx is immune to any effect that would sense its emotions or read its thoughts, as well as any Divination spell that it refuses. Wisdom (Insight) checks made to ascertain the sphinx's intentions or sincerity have disadvantage.</dd>
+        <section>
+          <ul>
+            <li itemprop="ac">19</li>
+            <li itemprop="max-hit-points">13</li>
+            <li itemprop="hit-dice">d10</li>
+            <li itemprop="size">Medium</li>
+            <li itemprop="speed">25</li>
+          </ul>
+        </section>
 
-            <dt>Magic Weapons.</dt>
-            <dd>The sphinx's weapon attacks are magical.</dd>
+        <section>
+          <ul>
+            <li itemscope itemprop="features"><span itemprop="name">Darkvision.</span> <span itemprop="description">you see in dim light within a 60-foot radius of you as if it were bright light, and in darkness in that radius as if it were dim  light. You can’t discern color in darkness, only  shades of gray.</span></li>
+            <li itemscope itemprop="features"><span itemprop="name">Dwarven Resilience.</span> <span itemprop="description">You have advantage on saving throws against poison, and you have resistance against poison damage.</span></li>
+            <li itemscope itemprop="features"><span itemprop="name">Stonecutting.</span> <span itemprop="description">Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check.</span></li>
+            <li itemscope itemprop="features"><span itemprop="name">Fighting style: defense.</span> <span itemprop="description">While you are wearing armor, you gain a +1 bonus to AC. this bonus is already included in your AC.</span></li>
+            <li itemscope itemprop="features"><span itemprop="name">Second wind.</span> <span itemprop="description">You have a limited well of stamina you can draw on to protect yourself from harm. you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.</span></li>
+            <li itemscope itemprop="features"><span itemprop="name">Rustic hospitality.</span> <span itemprop="description">You can finda  place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them.</span></li>
+          </ul>
+        </section>
 
-            <dt>Spellcasting.</dt>
-            <dd>
-              The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its Spells. The sphinx has the following Wizard Spells prepared:
-              <ol>
-                <li>Cantrips (at will): <em>mage hand, minor illusion, prestidigitation</em></li>
-                <li>1st Level (4 slots): <em>detect magic, identigy, shield</em></li>
-                <li>2nd Level (3 slots): <em>darkness, locate object, suggestion</em></li>
-                <li>3rd Level (3 slots): <em>dispel magic, remove curse, tongues</em></li>
-                <li>4th Level (3 slots): <em>banishment, greater invisibility</em></li>
-                <li>5th Level (1 slot): <em>legend lore</em></li>
-              </ol>
-            </dd>
+        <section>
+          <ul>
+            <li itemprop="other-proficiencies">Common</li>
+            <li itemprop="other-proficiencies">Dwarvish</li>
+            <li itemprop="other-proficiencies">All armor</li>
+            <li itemprop="other-proficiencies">Shields</li>
+            <li itemprop="other-proficiencies">Simple weapons</li>
+            <li itemprop="other-proficiencies">Martial weapons</li>
+            <li itemprop="other-proficiencies">Throwing hammer</li>
+            <li itemprop="other-proficiencies">Smith's tools'</li>
+          </ul>
+        </section>
 
-          </dl>
-        </special-traits>
+        <section>
+          <ul>
+            <li itemprop="equipment">Chainmail</li>
+            <li itemprop="equipment">Battleaxe</li>
+            <li itemprop="equipment">Shield</li>
+            <li itemprop="equipment">2x handaxes</li>
+            <li itemprop="equipment">Dungeoneer's pack'</li>
+            <li itemprop="equipment">Smith's tools</li>
+            <li itemprop="equipment">Iron pot</li>
+            <li itemprop="equipment">Shovel</li>
+            <li itemprop="equipment">Set of common clothes</li>
+            <li itemprop="equipment">Belt pouch containing 10gp</li>
+          </ul>
+        </section>
 
-        <actions>
-          <h2>Actions</h2>
-          <dl>
-            <dt>Multiattack.</dt>
-            <dd>The sphinx makes two claw attacks.</dd>
-            <dt>Claw.</dt>
-            <dd><em>Melee Weapon Attack:</em> +9 to hit, reach 5 ft., one target. <em>Hit:</em> 13 (2d8 + 4) slashing damage.</dd>
-          </dl>
-        </actions>
+        <section>
+          <ul>
+            <li itemscope itemprop="attacks"><span itemprop="name">Battleaxe</span> <span itemprop="damage">1d8</span> <span itemprop="type">slashing</span> (<data itemprop="proficient" value="true">proficient</data>)</li>
+            <li itemscope itemprop="attacks"><span itemprop="name">Handaxe</span> <span itemprop="damage">1d6</span> <span itemprop="type">slashing</span> (<data itemprop="proficient" value="true">proficient</data>)</li>
+          </ul>
+        </section>
 
-        <legendary-actions>
+        <section>
+          <div>
+            <h2>Personality Traits</h2>
+            <p itemprop="personality-traits">My gruff, snarling demeanour hides a soft heart and a genuine affection for my friends.</p>
+          </div>
 
-          <h2>Legendary Actions</h2>
+          <div>
+            <h2>Ideals</h2>
+            <p itemprop="ideals">Fairness. All are equal under the law and non should get preferential treatment.</p>
+          </div>
 
-          <p>Can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time, and only at the end of another creature's turn. Spent legendary actions are regained at the start of each turn.</p>
+          <div>
+            <h2>Bonds</h2>
+            <p itemprop="bonds">I aspire to reclaim my homeland, Mithral Hall, from the shadow dragon that drove my people out.</p>
+          </div>
 
-          <ol>
+          <div>
+            <h2>Flaws</h2>
+            <p itemprop="flaws">I have a soft spot for orphans and other, wayward souls leading me to show mercy even when it might not be warranted.</p>
+          </div>
+        </section>
 
-            <li><strong>Claw Attack.</strong> The sphinx makes one claw attack.</li>
-
-            <li><strong>Teleport (Costs 2 Actions).</strong> The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.
-</li>
-
-            <li><strong>Cast a Spell (Costs 3 Actions).</strong> The sphinx casts a spell from its list of prepared Spells, using a spell slot as normal.</li>
-
-          </ol>
-
-        </legendary-actions>
-
-      </dnd-stat-block>
-
+      </dnd-char-sheet>
     </section>
 
-    <section id="two-column">
-      <h1>Two-column Stat Block</h1>
-
-      <div class="columns">
-        <dnd-stat-block id="gynosphinx" class="two-column" str="18" dex="15" con="16" int="18" wis="18" cha="18">
-
-          <header>
-            <h1>Gynosphinx</h1>
-            <p>Large monstrosity, lawful neutral</p>
-          </header>
-
-          <combat-stats>
-            <dl>
-              <dt>Armor Class</dt><dd>17 (natural armor)</dd>
-              <dt>Hit Points</dt><dd>136 (16d10 + 48)</dd>
-              <dt>Speed</dt><dd>40 ft., fly 60 ft.</dd>
-            </dl>
-          </combat-stats>
-
-          <ability-scores>
-            <dl>
-              <dt>Strength</dt><dd>18 (+4)</dd>
-              <dt>Dexterity</dt><dd>15 (+2)</dd>
-              <dt>Constitution</dt><dd>16 (+3)</dd>
-              <dt>Intelligence</dt><dd>18 (+4)</dd>
-              <dt>Wisdom</dt><dd>18 (+4)</dd>
-              <dt>Charisma</dt><dd>18 (+4)</dd>
-            </dl>
-          </ability-scores>
-
-          <stats>
-            <dl>
-              <dt>Skills</dt><dd>Arcana +14, History +14, Perception +9, Religion +9</dd>
-              <dt>Damage Resistances</dt><dd>bludgeoning, piercing, and slashing from nonmagical items</dd>
-              <dt>Damage Immunities</dt><dd>psychic</dd>
-              <dt>Condition Immunities</dt><dd>charmed, frightened</dd>
-              <dt>Senses</dt><dd>truesight 120 ft., passive Perception 18</dd>
-              <dt>Languages</dt><dd>Common, Sphinx</dd>
-              <dt>Challenge</dt><dd>11 (7,200 XP)</dd>
-            </dl>
-          </stats>
-
-          <special-traits>
-            <dl>
-
-              <dt>Inscrutable.</dt>
-              <dd>The sphinx is immune to any effect that would sense its emotions or read its thoughts, as well as any Divination spell that it refuses. Wisdom (Insight) checks made to ascertain the sphinx's intentions or sincerity have disadvantage.</dd>
-
-              <dt>Magic Weapons.</dt>
-              <dd>The sphinx's weapon attacks are magical.</dd>
-
-              <dt>Spellcasting.</dt>
-              <dd>
-                The sphinx is a 9th-level spellcaster. Its spellcasting ability is Intelligence (spell save DC 16, +8 to hit with spell attacks). It requires no material components to cast its Spells. The sphinx has the following Wizard Spells prepared:
-                <ol>
-                  <li>Cantrips (at will): <em>mage hand, minor illusion, prestidigitation</em></li>
-                  <li>1st Level (4 slots): <em>detect magic, identigy, shield</em></li>
-                  <li>2nd Level (3 slots): <em>darkness, locate object, suggestion</em></li>
-                  <li>3rd Level (3 slots): <em>dispel magic, remove curse, tongues</em></li>
-                  <li>4th Level (3 slots): <em>banishment, greater invisibility</em></li>
-                  <li>5th Level (1 slot): <em>legend lore</em></li>
-                </ol>
-              </dd>
-
-            </dl>
-          </special-traits>
-
-          <actions>
-            <h2>Actions</h2>
-            <dl>
-              <dt>Multiattack.</dt>
-              <dd>The sphinx makes two claw attacks.</dd>
-              <dt>Claw.</dt>
-              <dd><em>Melee Weapon Attack:</em> +9 to hit, reach 5 ft., one target. <em>Hit:</em> 13 (2d8 + 4) slashing damage.</dd>
-            </dl>
-          </actions>
-
-        <legendary-actions>
-
-          <h2>Legendary Actions</h2>
-
-          <p>Can take 3 legendary actions, choosing from the options below. Only one legendary action can be used at a time, and only at the end of another creature's turn. Spent legendary actions are regained at the start of each turn.</p>
-
-          <ol>
-
-            <li><strong>Claw Attack.</strong> The sphinx makes one claw attack.</li>
-
-            <li><strong>Teleport (Costs 2 Actions).</strong> The sphinx magically teleports, along with any equipment it is wearing or carrying, up to 120 feet to an unoccupied space it can see.
-</li>
-
-            <li><strong>Cast a Spell (Costs 3 Actions).</strong> The sphinx casts a spell from its list of prepared Spells, using a spell slot as normal.</li>
-
-          </ol>
-
-        </legendary-actions>
-
-        </dnd-stat-block>
-
-      </div>
-
-    </section>
+    <script src="../css-grid-polyfill-binaries/css-polyfills.min.js"></script>
 
   </body>
 

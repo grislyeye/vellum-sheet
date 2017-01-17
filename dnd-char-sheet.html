@@ -1,0 +1,515 @@
+<link rel="import" href="../polymer/polymer.html">
+<script src="../microtesia.js/dist/microtesia.js"></script>
+
+<dom-module id="dnd-char-sheet">
+  <link rel="import" type="css" href="basic-style.css">
+
+  <template>
+
+    <div class="content-wrapper">
+
+      <header class="name detail box">
+        <h2>
+          Character Name
+        </h2>
+
+        <h1>
+          {{ character.name }}
+        </h1>
+      </header>
+
+      <div class="details box">
+
+        <div class="row">
+          <div class="class detail">
+            <h2>Class &amp; Level</h2>
+            <p>
+              <template is="dom-if" if="{{ character.level }}">Level {{ character.level }}</template> {{ character.class }}
+            </p>
+          </div>
+
+          <div class="background detail">
+            <h2>Background</h2>
+            <p>
+              {{ character.background }}
+            </p>
+          </div>
+
+          <div class="player-name detail">
+            <h2>Player Name</h2>
+            <p>
+              {{ character.player }}
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="race detail">
+            <h2>Race</h2>
+            <p>
+              {{ character.race }}
+            </p>
+          </div>
+
+          <div class="alignment detail">
+            <h2>Alignment</h2>
+            <p>
+              {{ character.alignment }}
+            </p>
+          </div>
+
+          <div class="xp detail">
+            <h2>Experience Points</h2>
+            <p>
+              {{ character.xp }}
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="abilities group">
+        <div class="strength box">
+          <h2>Strength</h2>
+          <p class="score">{{character.strength.score}}</p>
+          <p class="modifier">({{character.strength.modifier.pretty}})</p>
+        </div>
+        <div class="dexterity box">
+          <h2>Dexterity</h2>
+          <p class="score">{{character.dexterity.score}}</p>
+          <p class="modifier">({{character.dexterity.modifier.pretty}})</p>
+        </div>
+        <div class="constitution box">
+          <h2>Constitution</h2>
+          <p class="score">{{character.constitution.score}}</p>
+          <p class="modifier">({{character.constitution.modifier.pretty}})</p>
+        </div>
+        <div class="intelligence box">
+          <h2>Intelligence</h2>
+          <p class="score">{{character.intelligence.score}}</p>
+          <p class="modifier">({{character.intelligence.modifier.pretty}})</p>
+        </div>
+        <div class="wisdom box">
+          <h2>Wisdom</h2>
+          <p class="score">{{character.wisdom.score}}</p>
+          <p class="modifier">({{character.wisdom.modifier.pretty}})</p>
+        </div>
+        <div class="charisma box">
+          <h2>Charisma</h2>
+          <p class="score">{{character.charisma.score}}</p>
+          <p class="modifier">({{character.charisma.modifier.pretty}})</p>
+        </div>
+      </div>
+
+      <div class="proficiencies group">
+
+        <div class="proficiency-bonus value box">
+          <h2>Proficiency<br/>Bonus</h2>
+          <p>{{character.proficiencyBonus.pretty}}</p>
+        </div>
+
+        <div class="saving-throws list box">
+          <ul>
+            <li>{{character.savingThrows.strength.pretty}} Strength</li>
+            <li>{{character.savingThrows.dexterity.pretty}} Dexterity</li>
+            <li>{{character.savingThrows.constitution.pretty}} Constitution</li>
+            <li>{{character.savingThrows.intelligence.pretty}} Intelligence</li>
+            <li>{{character.savingThrows.wisdom.pretty}} Wisdom</li>
+            <li>{{character.savingThrows.charisma.pretty}} Charisma</li>
+          </ul>
+          <h2>Saving Throws</h2>
+        </div>
+
+        <div class="skills list box">
+          <ul>
+            <li>{{character.skills.acrobatics.pretty}} Acrobatics</li>
+            <li>{{character.skills.animalHandling.pretty}} Animal Handling</li>
+            <li>{{character.skills.arcana.pretty}} Arcana</li>
+            <li>{{character.skills.athletics.pretty}} Athletics</li>
+            <li>{{character.skills.deception.pretty}} Deception</li>
+            <li>{{character.skills.history.pretty}} History</li>
+            <li>{{character.skills.insight.pretty}} Insight</li>
+            <li>{{character.skills.intimidation.pretty}} Intimidation</li>
+            <li>{{character.skills.investigation.pretty}} Investigation</li>
+            <li>{{character.skills.medicine.pretty}} Medicine</li>
+            <li>{{character.skills.nature.pretty}} Nature</li>
+            <li>{{character.skills.perception.pretty}} Perception</li>
+            <li>{{character.skills.performance.pretty}} Performance</li>
+            <li>{{character.skills.persuasion.pretty}} Persuasion</li>
+            <li>{{character.skills.religion.pretty}} Religion</li>
+            <li>{{character.skills.sleightOfHand.pretty}} Sleight of Hand</li>
+            <li>{{character.skills.stealth.pretty}} Stealth</li>
+            <li>{{character.skills.survival.pretty}} Survival</li>
+          </ul>
+          <h2>Skills</h2>
+        </div>
+
+      </div>
+
+      <div class="combat-stats group">
+
+        <div class="ac value">
+          <h2>Armor Class</h2>
+          <p>{{character.ac}}</p>
+        </div>
+
+        <div class="initiative value">
+          <h2>Initiative</h2>
+          <p>{{character.dexterity.modifier.pretty}}</p>
+        </div>
+
+        <div class="speed value">
+          <h2>Speed</h2>
+          <p>{{character.speed}} ft.</p>
+        </div>
+
+        <div class="max-hit-points value">
+          <h2>Hit Points</h2>
+          <p>{{character.max-hit-points}}</p>
+        </div>
+
+        <div class="hit-dice value">
+          <h2>Hit Dice</h2>
+          <p>{{character.level}}{{character.hit-dice}}</p>
+        </div>
+
+        <div class="size value">
+          <h2>Size</h2>
+          <p>{{character.size}}</p>
+        </div>
+
+      </div>
+
+      <div class="characteristics group">
+        <div class="personality-traits list">
+          <ul>
+            <template is="dom-if" if="{{ !isArray(character.personality-traits) }}">
+              <li>{{character.personality-traits}}</li>
+            </template>
+            <template is="dom-if" if="{{ isArray(character.personality-traits) }}">
+              <template is="dom-repeat" items={{character.personality-traits}}>
+                <li>{{item}}</li>
+              </template>
+            </template>
+          </ul>
+          <h2>Personality Traits</h2>
+        </div>
+        <div class="ideals list">
+          <ul>
+            <template is="dom-if" if="{{ !isArray(character.ideals) }}">
+              <li>{{character.ideals}}</li>
+            </template>
+            <template is="dom-if" if="{{ isArray(character.ideals) }}">
+              <template is="dom-repeat" items={{character.ideals}}>
+                <li>{{item}}</li>
+              </template>
+            </template>
+          </ul>
+          <h2>Ideals</h2>
+        </div>
+        <div class="bonds list">
+          <ul>
+            <template is="dom-if" if="{{ !isArray(character.bonds) }}">
+              <li>{{character.bonds}}</li>
+            </template>
+            <template is="dom-if" if="{{ isArray(character.bonds) }}">
+              <template is="dom-repeat" items={{character.bonds}}>
+                <li>{{item}}</li>
+              </template>
+            </template>
+          </ul>
+          <h2>Bonds</h2>
+        </div>
+        <div class="flaws list">
+          <ul>
+            <template is="dom-if" if="{{ !isArray(character.flaws) }}">
+              <li>{{character.flaws}}</li>
+            </template>
+            <template is="dom-if" if="{{ isArray(character.flaws) }}">
+              <template is="dom-repeat" items={{character.flaws}}>
+                <li>{{item}}</li>
+              </template>
+            </template>
+          </ul>
+          <h2>Flaws</h2>
+        </div>
+      </div>
+
+      <div class="attacks group list">
+        <table>
+          <thead>
+            <tr>
+              <th class="name">Name</th>
+              <th class="bonus">Atk Bonus</th>
+              <th class="damage">Damage/type</th>
+            </tr>
+            <tbody>
+              <template is="dom-repeat" items={{character.attacks}}>
+                <tr>
+                  <td class="name">{{item.name}}</td>
+                  <td class="bonus">{{item.attackBonus.pretty}}</td>
+                  <td class="damage">{{item.damage}} {{item.type}}</td>
+                </tr>
+              </template>
+            </tbody>
+          </thead>
+        </table>
+
+        <ul>
+          <template is="dom-repeat" items={{ character.attackNotes }}>
+            <li>*{{item}}</li>
+          </template>
+        </ul>
+
+        <h2>Attacks &amp; Spellcasting</h2>
+      </div>
+
+      <div class="passive-perception value">
+        <h2>Passive Wisdom (Perception)</h2>
+        <p>{{character.skills.perception.passive}}</p>
+      </div>
+
+      <div class="equipment group list">
+        <ul>
+          <template is="dom-if" if="{{ !isArray(character.equipment) }}">
+            <li>{{character.equipment}}</li>
+          </template>
+          <template is="dom-if" if="{{ isArray(character.equipment) }}">
+            <template is="dom-repeat" items={{character.equipment}}>
+              <li>{{item}}</li>
+            </template>
+          </template>
+        </ul>
+        <h2>Equipment</h2>
+      </div>
+
+      <div class="features group list">
+        <ul>
+          <template is="dom-if" if="{{ !isArray(character.features) }}">
+            <li>{{character.features}}</li>
+          </template>
+          <template is="dom-if" if="{{ isArray(character.features) }}">
+            <template is="dom-repeat" items={{character.features}}>
+              <li><strong>{{item.name}}</strong> {{item.description}}</li>
+            </template>
+          </template>
+        </ul>
+        <h2>Features &amp; Traits</h2>
+      </div>
+
+      <div class="other-proficiencies group list">
+        <ul>
+          <template is="dom-if" if="{{ !isArray(character.other-proficiencies) }}">
+            <li>{{character.other-proficiencies}}</li>
+          </template>
+          <template is="dom-if" if="{{ isArray(character.other-proficiencies) }}">
+            <template is="dom-repeat" items={{character.other-proficiencies}}>
+              <li>{{item}}</li>
+            </template>
+          </template>
+        </ul>
+        <h2>Other Proficiencies &amp; Languages</h2>
+      </div>
+
+    </div>
+
+  </template>
+
+  <script>
+
+    class Modifier {
+      constructor(value) {
+        this.value = value;
+        if(value >= 0) this.pretty = "+"  + value;
+        else this.pretty = value
+      }
+    }
+
+    class Ability {
+      constructor(name, score) {
+        this.name = name;
+        this.score = score;
+        if(score) {
+          this.modifier = new Modifier(Math.round((score / 2.1) - 5));
+          this.passive = 10 + this.modifier.value;
+        } else {
+          this.score = 10;
+          this.modifier = new Modifier(0);
+          this.passive = 10;
+        }
+      }
+    }
+
+    class ProficiencyBonus extends Modifier {
+      constructor(level) {
+        if(level) super( Math.ceil(level / 5) + 1 );
+        else super(0);
+      }
+    }
+
+    class SavingThrow extends Modifier {
+      constructor(ability, savingThrows, bonus) {
+        var isProficient = savingThrows.includes(ability.name);
+        if(isProficient) super(ability.modifier.value + bonus.value);
+        else super(ability.modifier.value);
+      }
+    }
+
+    class SavingThrows {
+      constructor(character, savingThrows) {
+        if(savingThrows) {
+          this.strength = new SavingThrow(character.strength, savingThrows, character.proficiencyBonus);
+          this.constitution = new SavingThrow(character.constitution, savingThrows, character.proficiencyBonus);
+          this.dexterity = new SavingThrow(character.dexterity, savingThrows, character.proficiencyBonus);
+          this.intelligence = new SavingThrow(character.intelligence, savingThrows, character.proficiencyBonus);
+          this.wisdom = new SavingThrow(character.wisdom, savingThrows, character.proficiencyBonus);
+          this.charisma = new SavingThrow(character.charisma, savingThrows, character.proficiencyBonus);
+        }
+      }
+    }
+
+    class Skill extends Modifier {
+      constructor(name, skills, ability, bonus) {
+        var isProficient = skills.includes(name);
+        if(isProficient) {
+          super(ability.modifier.value + bonus.value);
+          this.passive = 10 + ability.modifier.value + bonus.value;
+        } else {
+          super(ability.modifier.value);
+          this.passive = 10 + ability.modifier.value;
+        }
+      }
+    }
+
+    class Skills {
+      constructor(character, skills) {
+        if(skills) {
+          this.acrobatics = new Skill('Acrobatics', skills, character.dexterity, character.proficiencyBonus);
+          this.animalHandling = new Skill('Animal Handling', skills, character.wisdom, character.proficiencyBonus);
+          this.arcana = new Skill('Arcana', skills, character.intelligence, character.proficiencyBonus);
+          this.athletics = new Skill('Athletics', skills, character.strength, character.proficiencyBonus);
+          this.deception = new Skill('Deception', skills, character.charisma, character.proficiencyBonus);
+          this.history = new Skill('History', skills, character.intelligence, character.proficiencyBonus);
+          this.insight = new Skill('Insight', skills, character.wisdom, character.proficiencyBonus);
+          this.intimidation = new Skill('Intimidation', skills, character.charisma, character.proficiencyBonus);
+          this.investigation = new Skill('Investigation', skills, character.intelligence, character.proficiencyBonus);
+          this.medicine = new Skill('Medicine', skills, character.intelligence, character.proficiencyBonus);
+          this.nature = new Skill('Nature', skills, character.intelligence, character.proficiencyBonus);
+          this.perception = new Skill('Perception', skills, character.wisdom, character.proficiencyBonus);
+          this.performance = new Skill('Performance', skills, character.charisma, character.proficiencyBonus);
+          this.persuasion = new Skill('Persuasion', skills, character.charisma, character.proficiencyBonus);
+          this.religion = new Skill('Religion', skills, character.intelligence, character.proficiencyBonus);
+          this.sleightOfHand = new Skill('Sleight of Hand', skills, character.dexterity, character.proficiencyBonus);
+          this.stealth = new Skill('Stealth', skills, character.dexterity, character.proficiencyBonus);
+          this.survival = new Skill('Survival', skills, character.wisdom, character.proficiencyBonus);
+        }
+      }
+    }
+
+    class Attack {
+      constructor(character, attack) {
+        this.name = attack.name;
+        this.type = attack.type;
+
+        var attackModifier = character.strength.modifier;
+
+        if(attack.finesse && attack.finesse === "true" && character.dexterity.modifier.value > character.strength.modifier.value) {
+          attackModifier = character.dexterity.modifier;
+        }
+
+        if(attack.ranged && attack.ranged === "true") {
+          attackModifier = character.dexterity.modifier;
+        }
+
+        if(attack.offhand && attack.offhand === "true") {
+          attackModifier = character.dexterity.modifier;
+        }
+
+        if(attack.proficient && attack.proficient === "true") {
+          this.attackBonus = new Modifier(attackModifier.value + character.proficiencyBonus.value);
+          this.damageBonus = new Modifier(attackModifier.value + character.proficiencyBonus.value);
+        } else {
+          this.attackBonus = new Modifier(attackModifier.value);
+          this.damageBonus = new Modifier(attackModifier.value);
+        }
+
+        if(attack.offhand && attack.offhand === "true" && attack.proficient && attack.proficient === "true") {
+          this.damageBonus = character.proficiencyBonus;
+        } else if(attack.offhand && attack.offhand === "true") {
+          this.damageBonus = new Modifier(0);
+        }
+
+        if(attack.attackBonus) {
+          this.attackBonus = new Modifier(parseInt(attack.attackBonus) + this.attackBonus.value)
+        }
+
+        this.damage = attack.damage + this.damageBonus.pretty;
+      }
+    }
+
+    function character(data) {
+      data.strength = new Ability('Strength', data.strength);
+      data.dexterity = new Ability('Dexterity', data.dexterity);
+      data.constitution = new Ability('Constitution', data.constitution);
+      data.intelligence = new Ability('Intelligence', data.intelligence);
+      data.wisdom = new Ability('Wisdom', data.wisdom);
+      data.charisma = new Ability('Charisma', data.charisma);
+
+      data.proficiencyBonus = new ProficiencyBonus(data.level);
+
+      data.savingThrows = new SavingThrows(data, data['saving-throws']);
+      data.skills = new Skills(data, data.skills);
+
+      if(data.attacks) {
+        if(Array.isArray(data.attacks)) {
+          data.attacks = data.attacks.map(function (a) { return new Attack(data, a); });
+        } else {
+          data.attacks = [new Attack(data, data.attacks)];
+        }
+      }
+
+      for(i in data.features) {
+        if(data.features[i].expertise) {
+          var oldSkill = data.skills[data.features[i].expertise];
+          data.skills[data.features[i].expertise] = new Modifier(oldSkill.value + data.proficiencyBonus.value);
+          data.skills[data.features[i].expertise].passive = oldSkill.passive + data.proficiencyBonus.value;
+        }
+      }
+
+      return data;
+    }
+
+    HTMLImports.whenReady(function () {
+      Polymer({
+
+        is: 'dnd-char-sheet',
+
+        properties: {
+          character: {
+            type: Object,
+            readOnly: true,
+            computed: 'computeCharacter(class)'
+          }
+        },
+
+        computeCharacter: function() {
+          var children = this.getEffectiveChildren();
+          var virtualParent = document.createElement('div');
+          virtualParent.setAttribute('itemscope', '');
+          children.forEach(function(c) { virtualParent.appendChild(c); });
+
+          var microdata = parseMicrodata(virtualParent);
+
+          return character(microdata[0]);
+        },
+        
+        isArray: function(array) {
+          return Array.isArray(array);
+        }
+
+      });
+
+    });
+  </script>
+
+</dom-module>

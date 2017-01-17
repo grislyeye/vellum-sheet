@@ -1,8 +1,8 @@
 {
-  "name": "dnd-stat-block",
-  "description": "Web component for displaying 5th Edition D&D monster stat blocks",
-  "main": "stat-block.html",
-  "version": "0.3.2",
+  "name": "dnd-char-sheet",
+  "description": "Web component for displaying 5th Edition D&D character sheets",
+  "main": "dnd-char-sheet.html",
+  "version": "0.0.0",
   "authors": [
     "Val Markovic <val@markovic.io> (http://val.markovic.io)",
     "R.G. Wood <ric@grislyeye.com> (https://grislyeye.com)"
@@ -20,10 +20,11 @@
     "node_modules",
     "bower_components",
     "demo",
-    "index.html",
-    "style-example.html"
+    "index.html"
   ],
   "dependencies": {
-    "polymer": "Polymer#^1.7.0"
+    "polymer": "Polymer#^1.7.0",
+    "css-grid-polyfill-binaries": "^1.1.2",
+    "microtesia.js": "^0.0.0"
   }
 }

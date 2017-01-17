@@ -1,7 +1,7 @@
 {
-  "name": "dnd-stat-block",
-  "version": "0.3.3",
-  "description": "Web component for displaying 5th Edition D&D monster stat blocks",
+  "name": "dnd-char-sheet",
+  "version": "0.0.0",
+  "description": "Web component for displaying 5th Edition D&D character sheets",
   "keywords": [
     "polymer",
     "webcomponent"
