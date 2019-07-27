@@ -1,6 +1,6 @@
-# dnd-char-sheet
+# vellum-char-sheet
 
-Web component for displaying 5th Edition *Dungeons & Dragons* monster character sheets. Features include:
+Web component for displaying 5th Edition RPG character sheets. Features include:
 
   * Cross-browser support using Polymer and the Web Components polyfill
   * Simpler (just one import vs 5)
@@ -9,14 +9,14 @@ Web component for displaying 5th Edition *Dungeons & Dragons* monster character 
 To install:
 
 ```sh
-bower install --save-dev dnd-char-sheet
+bower install --save-dev vellum-char-sheet
 ```
 
 Add the following lines to your HTML `head` element:
 
 ```html
 <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-<link rel="import" href="dnd-char-sheet.html">
+<link rel="import" href="vellum-char-sheet.html">
 ```
 
 And add the following polyfill import to the bottom of your HTML:
@@ -32,7 +32,7 @@ And add the following polyfill import to the bottom of your HTML:
 A statblock is written as follows:
 
 ```html
-<dnd-char-sheet id="bruenor" itemscope itemtype="http://rgladwell.github.io/dnd-schemas/character.html">
+<vellum-char-sheet id="bruenor" itemscope itemtype="http://grislyeye.github.io/vellum-char-sheet-schemas/character.html">
 
   <header>
     <h1 itemprop="name">Bruenor</h1>
@@ -153,7 +153,7 @@ A statblock is written as follows:
     </div>
   </section>
 
-</dnd-char-sheet>
+</vellum-char-sheet>
 ```
 
 ## Custom Themes
@@ -183,7 +183,7 @@ You can then add custom styles in the `style` element above as described the Pol
 
 Custom CSS properties for this component include:
 
-| Property                               | Description 
+| Property                               | Description
 | -------------------------------------- | ---
 
 ## Hacking

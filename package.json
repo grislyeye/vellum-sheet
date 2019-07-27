@@ -1,5 +1,5 @@
 {
-  "name": "dnd-char-sheet",
+  "name": "vellum-sheet",
   "version": "0.0.0",
   "description": "Web component for displaying 5th Edition D&D character sheets",
   "keywords": [

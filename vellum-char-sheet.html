@@ -1,7 +1,7 @@
 <link rel="import" href="../polymer/polymer.html">
 <script src="../microtesia.js/dist/microtesia.js"></script>
 
-<dom-module id="dnd-char-sheet">
+<dom-module id="vellum-char-sheet">
   <link rel="import" type="css" href="basic-style.css">
 
   <template>
@@ -482,7 +482,7 @@
     HTMLImports.whenReady(function () {
       Polymer({
 
-        is: 'dnd-char-sheet',
+        is: 'vellum-char-sheet',
 
         properties: {
           character: {
@@ -502,7 +502,7 @@
 
           return character(microdata[0]);
         },
-        
+
         isArray: function(array) {
           return Array.isArray(array);
         }
