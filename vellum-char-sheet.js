@@ -312,8 +312,8 @@ class Character extends LitElement {
   }
 
   constructor() {
-    super();
-    this.character = this.computeCharacter();
+    super()
+    this.character = this.computeCharacter()
   }
 
   render() {
@@ -477,12 +477,12 @@ class Character extends LitElement {
 
         <div class="max-hit-points value">
           <h2>Hit Points</h2>
-          <p>${this.character["max-hit-points"]}</p>
+          <p>${this.character['max-hit-points']}</p>
         </div>
 
         <div class="hit-dice value">
           <h2>Hit Dice</h2>
-          <p>${this.character.level}${this.character["hit-dice"]}</p>
+          <p>${this.character.level}${this.character['hit-dice']}</p>
         </div>
 
         <div class="size value">
@@ -495,7 +495,7 @@ class Character extends LitElement {
       <div class="characteristics group">
         <div class="personality-traits list">
           <ul>
-            ${Array.isArray(this.character["personality-traits"]) ? this.renderList(this.character["personality-traits"]) : html`<li>${this.character["personality-traits"]}</li>`}
+            ${Array.isArray(this.character['personality-traits']) ? this.renderList(this.character['personality-traits']) : html`<li>${this.character['personality-traits']}</li>`}
           </ul>
           <h2>Personality Traits</h2>
         </div>
@@ -529,14 +529,14 @@ class Character extends LitElement {
               <th class="damage">Damage/type</th>
             </tr>
             <tbody>
-              ${this.character.attacks ? this.character.attacks.map( item =>
-                html`
+              ${this.character.attacks ? this.character.attacks.map(item =>
+    html`
                 <tr>
                   <td class="name">${item.name}</td>
                   <td class="bonus">${item.attackBonus.pretty}</td>
                   <td class="damage">${item.damage} ${item.type}</td>
                 </tr>`
-              ) : html``}
+  ) : html``}
             </tbody>
           </thead>
         </table>
@@ -569,7 +569,7 @@ class Character extends LitElement {
 
       <div class="other-proficiencies group list">
         <ul>
-          ${Array.isArray(this.character["other-proficiencies"]) ? this.renderList(this.character["other-proficiencies"]) : html`<li>${this.character["other-proficiencies"]}</li>`}
+          ${Array.isArray(this.character['other-proficiencies']) ? this.renderList(this.character['other-proficiencies']) : html`<li>${this.character['other-proficiencies']}</li>`}
         </ul>
         <h2>Other Proficiencies &amp; Languages</h2>
       </div>
@@ -578,7 +578,7 @@ class Character extends LitElement {
   }
 
   computeCharacter() {
-    return character(parseMicrodata(this)[0]);
+    return character(parseMicrodata(this)[0])
   }
 
   renderList(list) {

@@ -161,3 +161,7 @@ Requirements:
 To set-up your environment execute:
 
     $ npm install
+
+To run linting and test:
+
+    $ npm test
