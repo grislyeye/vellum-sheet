@@ -1,4 +1,4 @@
-# vellum-sheet
+# &lt;vellum-sheet&gt; [![Build Status](https://travis-ci.org/grislyeye/vellum-sheet.svg?branch=master)](https://travis-ci.org/grislyeye/vellum-sheet)
 
 Web component for displaying RPG sheets and 5th Edition RPG character sheets. Features include:
 
