@@ -3,17 +3,13 @@
 
   <head>
     <title>Character Sheet Example</title>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="vellum-char-sheet.html">
+    <script type="module" src="vellum-char-sheet.js"></script>
   </head>
 
   <body>
 
     <section>
       <h1>Default Character Sheet</h1>
-
-      <vellum-char-sheet id="empty" itemscope itemtype="http://grislyeye.github.io/vellum-schemas/character.html" style="width: 750px; margin-bottom: 20px">
-      </vellum-char-sheet-sheet>
 
       <vellum-char-sheet id="bruenor" itemscope itemtype="http://grislyeye.github.io/vellum-schemas/character.html" style="width: 750px;">
 
@@ -136,10 +132,8 @@
           </div>
         </section>
 
-      </vevellum-char-sheetm-char-sheet>
+      </vellum-char-sheet>
     </section>
-
-    <script src="../css-grid-polyfill-binaries/css-polyfills.min.js"></script>
 
   </body>
 

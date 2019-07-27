@@ -1,6 +1,6 @@
-# vellum-char-sheet
+# vellum-sheet
 
-Web component for displaying 5th Edition RPG character sheets. Features include:
+Web component for displaying RPG sheets and 5th Edition RPG character sheets. Features include:
 
   * Cross-browser support using Polymer and the Web Components polyfill
   * Simpler (just one import vs 5)
@@ -9,27 +9,16 @@ Web component for displaying 5th Edition RPG character sheets. Features include:
 To install:
 
 ```sh
-bower install --save-dev vellum-char-sheet
+npm i --save vellum-sheet
 ```
 
 Add the following lines to your HTML `head` element:
 
 ```html
-<script src="../webcomponentsjs/webcomponents-lite.js"></script>
-<link rel="import" href="vellum-char-sheet.html">
+<script type="module" src="vellum-char-sheet.js"></script>
 ```
 
-And add the following polyfill import to the bottom of your HTML:
-
-
-```html
-    <script src="../css-grid-polyfill-binaries/css-polyfills.min.js"></script>
-
-  </body>
-</html>
-```
-
-A statblock is written as follows:
+A character sheet is written as follows:
 
 ```html
 <vellum-char-sheet id="bruenor" itemscope itemtype="http://grislyeye.github.io/vellum-char-sheet-schemas/character.html">
@@ -156,35 +145,12 @@ A statblock is written as follows:
 </vellum-char-sheet>
 ```
 
-## Custom Themes
-
-To create a custom theme for your own character sheets create a file with the following content:
-
-```html
-<dom-module id="my-char-sheet-theme">
-
-  <template>
-    <style>
-    </style>
-  </template>
-
-  <script>
-    HTMLImports.whenReady(function () {
-      Polymer({
-        is: 'my-char-sheet-theme'
-      });
-    });
-  </script>
-
-</dom-module>
-```
-
-You can then add custom styles in the `style` element above as described the Polymer documentation for [Styling local DOM](https://www.polymer-project.org/1.0/docs/devguide/styling).
-
 Custom CSS properties for this component include:
 
 | Property                               | Description
 | -------------------------------------- | ---
+| `--char-sheet-border-color`            | Colour of the border line around sheet.
+
 
 ## Hacking
 

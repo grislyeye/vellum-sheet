@@ -1,9 +1,10 @@
 {
   "name": "vellum-sheet",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Web component for displaying 5th Edition D&D character sheets",
   "keywords": [
-    "polymer",
+    "lit",
+    "lit-element",
     "webcomponent"
   ],
   "author": "R.G. Wood <ric@grislyeye.com> (https://grislyeye.com)",
@@ -11,10 +12,8 @@
     "Val Markovic <val@markovic.io> (http://val.markovic.io)"
   ],
   "license": "Apache 2.0",
-  "scripts": {
-    "postinstall": "bower install"
-  },
-  "devDependencies": {
-    "bower": "^1.7.9"
+  "dependencies": {
+    "lit-element": "^2.1.0",
+    "microtesia.js": "^0.1.0"
   }
 }
