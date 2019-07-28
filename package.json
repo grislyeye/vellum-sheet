@@ -28,7 +28,7 @@
     "polymer-cli": "^1.9.11"
   },
   "scripts": {
-    "test": "polymer lint && eslint *.js lib/*.js",
+    "test": "eslint *.js lib/*.js && polymer lint",
     "start": "polymer serve --open"
   }
 }
