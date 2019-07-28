@@ -151,6 +151,22 @@ Custom CSS properties for this component include:
 | -------------------------------------- | ---
 | `--char-sheet-border-color`            | Colour of the border line around sheet.
 
+## Custom Sheets
+
+You can define your own custom sheets using the `<vellum-sheet>` and `<vellum-sheet-box>` custom elements:
+
+```html
+<vellum-sheet style="width: 750px; height: 750px;">
+  <vellum-sheet-box title="Box 1">
+    <ul>
+      <li>Box content 1</li>
+      <li>Box content 2</li>
+      <li>Box content 3</li>
+      <li>Box content 4</li>
+    </ul>
+  </vellum-sheet-box>
+</vellum-sheet>
+```
 
 ## Hacking
 

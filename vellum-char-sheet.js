@@ -32,8 +32,14 @@ class Character extends LitElement {
     }
 
     .character-content > div,
-    .character-content > header {
+    .character-content > header,
+    .character-content > vellum-sheet-box {
       margin: 0.5em;
+    }
+
+    .character-content vellum-sheet-box ul li {
+      margin: 0.5em;
+      padding: 0;
     }
 
     .character-content h1 {
@@ -154,6 +160,12 @@ class Character extends LitElement {
       margin-top: 0.5em;
     }
 
+    .character-content vellum-sheet-box + div,
+    .character-content div + vellum-sheet-box,
+    .character-content vellum-sheet-box + vellum-sheet-box {
+      margin-top: 0.5em;
+    }
+
     /* .lists */
 
     .character-content .list {
@@ -186,10 +198,9 @@ class Character extends LitElement {
 
     /* .features */
 
-    .character-content .features {
+    .character-content #features {
       grid-column: 5 / 7;
       grid-row: 3 / 7;
-      border: 1px var(--char-sheet-border-color, black) solid;
     }
 
     /* .value */
@@ -254,6 +265,10 @@ class Character extends LitElement {
       flex: 1;
     }
 
+    .character-content .characteristics vellum-sheet-box {
+      min-height: 5.5em;
+    }
+
     /* .attacks */
 
     .character-content .attacks {
@@ -290,19 +305,17 @@ class Character extends LitElement {
 
     /* .other-proficiencies */
 
-    .character-content .other-proficiencies {
+    .character-content #other-proficiencies {
       grid-column: 1 / 3;
       grid-row: 6 / 7;
-      border: 1px var(--char-sheet-border-color, black) solid;
       min-height: 10em;
     }
 
     /* .equipment */
 
-    .character-content .equipment {
+    .character-content #equipment {
       grid-column: 3 / 5;
       grid-row: 5 / 7;
-      border: 1px var(--char-sheet-border-color, black) solid;
       min-height: 10em;
     }`
   }
@@ -417,7 +430,7 @@ class Character extends LitElement {
             <p>${this.character.proficiencyBonus.pretty}</p>
           </div>
 
-          <div class="saving-throws list box">
+          <vellum-sheet-box id="saving-throws" title="Saving Throws">
             <ul>
               <li>${this.character.savingThrows.strength ? this.character.savingThrows.strength.pretty : html``} Strength</li>
               <li>${this.character.savingThrows.dexterity ? this.character.savingThrows.dexterity.pretty : html``} Dexterity</li>
@@ -426,10 +439,9 @@ class Character extends LitElement {
               <li>${this.character.savingThrows.wisdom ? this.character.savingThrows.wisdom.pretty : html``} Wisdom</li>
               <li>${this.character.savingThrows.charisma ? this.character.savingThrows.charisma.pretty : html``} Charisma</li>
             </ul>
-            <h2>Saving Throws</h2>
-          </div>
+          </vellum-sheet-box>
 
-          <div class="skills list box">
+          <vellum-sheet-box id="skills" title="Skills">
             <ul>
               <li>${this.character.skills.acrobatics ? this.character.skills.acrobatics.pretty : html``} Acrobatics</li>
               <li>${this.character.skills.animalHandling ? this.character.skills.animalHandling.pretty : html``} Animal Handling</li>
@@ -450,8 +462,7 @@ class Character extends LitElement {
               <li>${this.character.skills.stealth ? this.character.skills.stealth.pretty : html``} Stealth</li>
               <li>${this.character.skills.survival ? this.character.skills.survival.pretty : html``} Survival</li>
             </ul>
-            <h2>Skills</h2>
-          </div>
+          </vellum-sheet-box>
 
         </div>
 
@@ -490,31 +501,32 @@ class Character extends LitElement {
         </div>
 
         <div class="characteristics group">
-          <div class="personality-traits list">
+
+          <vellum-sheet-box id="personality-traits" title="Personality Traits">
             <ul>
               ${Array.isArray(this.character['personality-traits']) ? this.renderList(this.character['personality-traits']) : html`<li>${this.character['personality-traits']}</li>`}
             </ul>
-            <h2>Personality Traits</h2>
-          </div>
-          <div class="ideals list">
+          </vellum-sheet-box>
+
+          <vellum-sheet-box id="ideals" title="Ideals">
             <ul>
               ${Array.isArray(this.character.ideals) ? this.renderList(this.character.ideals) : html`<li>${this.character.ideals}</li>`}
             </ul>
-            <h2>Ideals</h2>
-          </div>
-          <div class="bonds list">
+          </vellum-sheet-box>
+
+          <vellum-sheet-box id="bonds" title="Bonds">
             <ul>
               ${Array.isArray(this.character.bonds) ? this.renderList(this.character.bonds) : html`<li>${this.character.bonds}</li>`}
             </ul>
-            <h2>Bonds</h2>
-          </div>
-          <div class="flaws list">
+          </vellum-sheet-box>
+
+          <vellum-sheet-box id="flaws" title="Flaws">
             <ul>
               ${Array.isArray(this.character.flaws) ? this.renderList(this.character.flaws) : html`<li>${this.character.flaws}</li>`}
               </template>
             </ul>
-            <h2>Flaws</h2>
-          </div>
+          </vellum-sheet-box>
+
         </div>
 
         <div class="attacks group list">
@@ -543,26 +555,23 @@ class Character extends LitElement {
           <p>${this.character.skills.perception ? this.character.skills.perception.passive : html``}</p>
         </div>
 
-        <div class="equipment group list">
+        <vellum-sheet-box id="equipment" title="Equipment">
           <ul>
             ${Array.isArray(this.character.equipment) ? this.renderList(this.character.equipment) : html`<li>${this.character.equipment}</li>`}
           </ul>
-          <h2>Equipment</h2>
-        </div>
+        </vellum-sheet-box>
 
-        <div class="features group list">
+        <vellum-sheet-box id="features" title="Features &amp; Traits">
           <ul>
             ${Array.isArray(this.character.features) ? this.renderFeatures(this.character.features) : html`<li>${this.character.features}</li>`}
           </ul>
-          <h2>Features &amp; Traits</h2>
-        </div>
+        </vellum-sheet-box>
 
-        <div class="other-proficiencies group list">
+        <vellum-sheet-box id="other-proficiencies" title="Other Proficiencies &amp; Languages">
           <ul>
             ${Array.isArray(this.character['other-proficiencies']) ? this.renderList(this.character['other-proficiencies']) : html`<li>${this.character['other-proficiencies']}</li>`}
           </ul>
-          <h2>Other Proficiencies &amp; Languages</h2>
-        </div>
+        </vellum-sheet-box>
 
       </div>
     </vellum-sheet>`

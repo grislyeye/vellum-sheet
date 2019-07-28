@@ -5,6 +5,7 @@
     <title>Character Sheet Example</title>
     <script type="module" src="vellum-sheet.js"></script>
     <script type="module" src="vellum-char-sheet.js"></script>
+    <script type="module" src="vellum-sheet-box.js"></script>
   </head>
 
   <body>
@@ -142,7 +143,15 @@
 
       <h1>Custom Sheet</h1>
 
-      <vellum-sheet style="width: 750px; height: 750px;">
+      <vellum-sheet class="three-column" style="width: 750px; height: 750px;">
+        <vellum-sheet-box title="Box Title">
+          <ul>
+            <li>Box content 1</li>
+            <li>Box content 2</li>
+            <li>Box content 3</li>
+            <li>Box content 4</li>
+          </ul>
+        </vellum-sheet-box>
       </vellum-sheet>
 
     </section>
