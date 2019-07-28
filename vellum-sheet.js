@@ -12,6 +12,11 @@ class Sheet extends LitElement {
       border: 1px var(--char-sheet-border-color, black) solid;
       padding: 0.5em;
       border-radius: 5px;
+
+    :host(.three-column) {
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+    }
       font-family: sans-serif;
       font-size: 10pt;
     }`
