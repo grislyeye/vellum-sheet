@@ -526,14 +526,7 @@ class Character extends LitElement {
                 <th class="damage">Damage/type</th>
               </tr>
               <tbody>
-                ${this.character.attacks ? this.character.attacks.map(item =>
-      html`
-                  <tr>
-                    <td class="name">${item.name}</td>
-                    <td class="bonus">${item.attackBonus.pretty}</td>
-                    <td class="damage">${item.damage} ${item.type}</td>
-                  </tr>`
-    ) : html``}
+                ${this.character.attacks ? this.renderList(this.character.attacks, this.renderAttack) : html``}
               </tbody>
             </thead>
           </table>
@@ -579,8 +572,18 @@ class Character extends LitElement {
     return character(parseMicrodata(this)[0])
   }
 
-  renderList(list) {
-    return list.map(item => html`<li>${item}</li>`)
+  renderList(list, mapper) {
+    if (!mapper) mapper = (item) => html`<li>${item}</li>`
+    return list.map(mapper)
+  }
+
+  renderAttack(attack) {
+    return html`
+      <tr>
+        <td class="name">${attack.name}</td>
+        <td class="bonus">${attack.attackBonus.pretty}</td>
+        <td class="damage">${attack.damage} ${attack.type}</td>
+      </tr>`
   }
 
   renderFeatures(features) {
