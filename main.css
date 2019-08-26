@@ -1,0 +1,6 @@
+vellum-sheet.custom {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 750px;
+  height: 750px;
+}

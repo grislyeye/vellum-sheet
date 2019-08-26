@@ -20,11 +20,6 @@ class Sheet extends LitElement {
       border-radius: 5px;
     }
 
-    :host(.three-column) {
-      display: grid;
-      grid-template-columns: 33% 33% 33%;
-    }
-
     ::slotted(*) {
       font-family: sans-serif;
       font-size: 10pt;

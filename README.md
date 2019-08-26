@@ -156,7 +156,7 @@ Custom CSS properties for this component include:
 You can define your own custom sheets using the `<vellum-sheet>` and `<vellum-sheet-box>` custom elements:
 
 ```html
-<vellum-sheet style="width: 750px; height: 750px;">
+<vellum-sheet>
   <vellum-sheet-box title="Box 1">
     <ul>
       <li>Box content 1</li>
@@ -166,6 +166,17 @@ You can define your own custom sheets using the `<vellum-sheet>` and `<vellum-sh
     </ul>
   </vellum-sheet-box>
 </vellum-sheet>
+```
+
+You should also order the contents of your custom sheet into columns yourself, preferably using [CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout):
+
+```css
+vellum-sheet.custom {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 750px;
+  height: 750px;
+}
 ```
 
 ## Hacking
