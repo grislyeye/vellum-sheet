@@ -6,6 +6,7 @@
     <script type="module" src="vellum-sheet.js"></script>
     <script type="module" src="vellum-char-sheet.js"></script>
     <script type="module" src="vellum-sheet-box.js"></script>
+    <script type="module" src="vellum-sheet-field.js"></script>
 
     <link rel="stylesheet" type="text/css" href="main.css" />
   </head>
@@ -147,7 +148,11 @@
 
 
       <vellum-sheet class="custom">
-        <vellum-sheet-box title="Box Title">
+        <h2>Campaign Threats Sheet</h2>
+
+        <vellum-sheet-field label="Campaign">Black Griffin</vellum-sheet-field>
+
+        <vellum-sheet-box title="Threat 1">
           <ul>
             <li>Box content 1</li>
             <li>Box content 2</li>
@@ -155,6 +160,7 @@
             <li>Box content 4</li>
           </ul>
         </vellum-sheet-box>
+
       </vellum-sheet>
 
     </section>

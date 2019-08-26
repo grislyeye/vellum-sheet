@@ -61,34 +61,11 @@ class Character extends LitElement {
       color: black;
     }
 
-    /* .name */
+    /* #name */
 
-    .character-content .name {
+    #name {
       grid-column: 1 / 3;
       grid-row: 1 / 2;
-    }
-
-    .character-content .name {
-      justify-content: space-between;
-    }
-
-    /* .detail */
-
-    .character-content .detail p {
-      font-size: 1.2em;
-      padding: 0;
-      margin: 0;
-      font-weight: bold;
-    }
-
-    .character-content .detail {
-      display: flex;
-      flex-direction: column-reverse;
-      height: 2.3em;
-    }
-
-    .character-content .detail h2 {
-      font-weight: normal;
     }
 
     /* .details */
@@ -107,7 +84,7 @@ class Character extends LitElement {
       padding-top: 1em;
     }
 
-    .character-content .details .detail {
+    .character-content .details vellum-sheet-field {
       width: 33%;
     }
 
@@ -330,62 +307,38 @@ class Character extends LitElement {
     <vellum-sheet>
       <div class="character-content">
 
-        <header class="name detail box">
-          <h2>
-            Character Name
-          </h2>
-
-          <h1>
-            ${this.character.name}
-          </h1>
+        <header id="name">
+          <vellum-sheet-field label="Character Name">${this.character.name}</vellum-sheet-field>
         </header>
 
         <div class="details box">
 
           <div class="row">
-            <div class="class detail">
-              <h2>Class &amp; Level</h2>
-              <p>
-                ${this.character.level ? html`Level ${this.character.level}` : html``} ${this.character.class}
-              </p>
-            </div>
+            <vellum-sheet-field id="class" label="Class &amp; Level" class="small">
+              ${this.character.level ? html`Level ${this.character.level}` : html``} ${this.character.class}
+            </vellum-sheet-field>
 
-            <div class="background detail">
-              <h2>Background</h2>
-              <p>
-                ${this.character.background}
-              </p>
-            </div>
+            <vellum-sheet-field id="background" label="Background" class="small">
+              ${this.character.background}
+            </vellum-sheet-field>
 
-            <div class="player-name detail">
-              <h2>Player Name</h2>
-              <p>
-                ${this.character.player}
-              </p>
-            </div>
+            <vellum-sheet-field id="player-name" label="Player Name" class="small">
+              ${this.character.player}
+            </vellum-sheet-field>
           </div>
 
           <div class="row">
-            <div class="race detail">
-              <h2>Race</h2>
-              <p>
-                ${this.character.race}
-              </p>
-            </div>
+            <vellum-sheet-field id="race" label="Race" class="small">
+              ${this.character.race}
+            </vellum-sheet-field>
 
-            <div class="alignment detail">
-              <h2>Alignment</h2>
-              <p>
-                ${this.character.alignment}
-              </p>
-            </div>
+            <vellum-sheet-field id="alignment" label="Alignment" class="small">
+              ${this.character.alignment}
+            </vellum-sheet-field>
 
-            <div class="xp detail">
-              <h2>Experience Points</h2>
-              <p>
-                ${this.character.xp}
-              </p>
-            </div>
+            <vellum-sheet-field id="xp" label="Experience Points" class="small">
+              ${this.character.xp}
+            </vellum-sheet-field>
           </div>
 
         </div>
