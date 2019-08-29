@@ -18,11 +18,6 @@ class Sheet extends LitElement {
       border: 1px var(--char-sheet-border-color, black) solid;
       padding: 0.5em;
       border-radius: 5px;
-    }
-
-    ::slotted(*) {
-      font-family: sans-serif;
-      font-size: 10pt;
     }`
   }
 

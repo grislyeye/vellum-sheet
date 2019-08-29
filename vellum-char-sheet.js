@@ -17,6 +17,8 @@ class Character extends LitElement {
     return css`
     :host {
       display: block;
+      font-size: 10pt;
+      font-family: sans-serif;
     }
 
     .character-content {
