@@ -22,10 +22,7 @@ class Sheet extends LitElement {
   }
 
   render() {
-    return html`
-    <div>
-      <slot></slot>
-    </div>`
+    return html`<slot></slot>`
   }
 
 }
