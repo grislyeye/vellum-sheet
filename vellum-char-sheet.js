@@ -28,9 +28,9 @@ class Character extends LitElement {
       grid-template-columns: 16% 17% 17% 17% 17% 16%;
     }
 
-    .character-content > div {
-      border-radius: 5px;
+    .character-content > * {
       padding: 0.5em;
+      margin: 0.5em;
     }
 
     .character-content > div,
@@ -72,33 +72,31 @@ class Character extends LitElement {
 
     /* .details */
 
-    .character-content .details {
+    .character-content #details {
       grid-column: 3 / 7;
       grid-row: 1 / 1;
-      background: lightgrey;
     }
 
-    .character-content .details .row {
+    .character-content #details .row {
       display: flex;
     }
 
-    .character-content .details .row  + .row {
+    .character-content #details .row  + .row {
       padding-top: 1em;
     }
 
-    .character-content .details vellum-sheet-field {
+    .character-content #details vellum-sheet-field {
       width: 33%;
     }
 
     /* .abilities */
 
-    .character-content .abilities {
+    .character-content #abilities {
       grid-column: 1 / 2;
       grid-row: 2 / 4;
-      background: lightgrey;
     }
 
-    .character-content .abilities .box {
+    .character-content #abilities .box {
       background: white;
       border: 1px var(--char-sheet-border-color, black) solid;
       padding: 0.5em;
@@ -106,24 +104,24 @@ class Character extends LitElement {
       text-align: center;
     }
 
-    .character-content .abilities .box .score {
+    .character-content #abilities .box .score {
       font-size: 3em;
       margin: 0;
       padding: 0;
     }
 
-    .character-content .abilities .box .modifier {
+    .character-content #abilities .box .modifier {
       margin: 0;
       padding: 0;
     }
 
-    .character-content .abilities .box h2 {
+    .character-content #abilities .box h2 {
       border: 0 none;
       font-weight: normal;
       padding: 0;
     }
 
-    .character-content .abilities > .box + .box {
+    .character-content #abilities > .box + .box {
       margin-top: 0.5em;
     }
 
@@ -212,39 +210,37 @@ class Character extends LitElement {
       padding-right: 0.5rem;
     }
 
-    /* .combat-stats */
+    /* combat-stats */
 
-    .character-content .combat-stats {
+    .character-content #combat-stats {
       grid-column: 3 / 5;
       grid-row: 2 / 3;
-      background: lightgrey;
       display: flex;
       flex-direction: column;
     }
 
-    .character-content .combat-stats > div + div {
+    .character-content #combat-stats > div + div {
       margin-top: 0.5em;
     }
 
-    /* .characteristics */
+    /* characteristics */
 
-    .character-content .characteristics {
+    .character-content #characteristics {
       grid-column: 5 / 7;
       grid-row: 2 / 3;
-      background: lightgrey;
       display: flex;
       flex-direction: column;
     }
 
-    .character-content .characteristics > div + div {
+    .character-content #characteristics > div + div {
       margin-top: 0.5em;
     }
 
-    .character-content .characteristics .list {
+    .character-content #characteristics .list {
       flex: 1;
     }
 
-    .character-content .characteristics vellum-sheet-box {
+    .character-content #characteristics vellum-sheet-box {
       min-height: 5.5em;
     }
 
@@ -313,7 +309,7 @@ class Character extends LitElement {
           <vellum-sheet-field label="Character Name">${this.character.name}</vellum-sheet-field>
         </header>
 
-        <div class="details box">
+        <vellum-sheet-group id="details">
 
           <div class="row">
             <vellum-sheet-field id="class" label="Class &amp; Level" class="small">
@@ -343,9 +339,9 @@ class Character extends LitElement {
             </vellum-sheet-field>
           </div>
 
-        </div>
+        </vellum-sheet-group>
 
-        <div class="abilities group">
+        <vellum-sheet-group id="abilities">
           <div class="strength box">
             <h2>Strength</h2>
             <p class="score">${this.character.strength.score}</p>
@@ -376,7 +372,7 @@ class Character extends LitElement {
             <p class="score">${this.character.charisma.score}</p>
             <p class="modifier">(${this.character.charisma.modifier.pretty})</p>
           </div>
-        </div>
+        </vellum-sheet-group>
 
         <div class="proficiencies group">
 
@@ -421,7 +417,7 @@ class Character extends LitElement {
 
         </div>
 
-        <div class="combat-stats group">
+        <vellum-sheet-group id="combat-stats">
 
           <div class="ac value">
             <h2>Armor Class</h2>
@@ -453,9 +449,9 @@ class Character extends LitElement {
             <p>${this.character.size}</p>
           </div>
 
-        </div>
+        </vellum-sheet-group>
 
-        <div class="characteristics group">
+        <vellum-sheet-group id="characteristics">
 
           <vellum-sheet-box id="personality-traits" title="Personality Traits">
             <ul>
@@ -482,7 +478,7 @@ class Character extends LitElement {
             </ul>
           </vellum-sheet-box>
 
-        </div>
+        </vellum-sheet-group>
 
         <div class="attacks group list">
           <table>
