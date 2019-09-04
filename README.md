@@ -179,6 +179,23 @@ vellum-sheet.custom {
 }
 ```
 
+Custom sheets can be composed on the following helper elements:
+
+## &lt;vellum-sheet-box&gt;
+
+A sheet box is a bordered container for any content, typically a list of items:
+
+```html
+<vellum-sheet-box title="Box Title">
+  <ul>
+    <li>Box content 1</li>
+    <li>Box content 2</li>
+    <li>Box content 3</li>
+    <li>Box content 4</li>
+  </ul>
+</vellum-sheet-box>
+```
+
 ## Hacking
 
 Requirements:

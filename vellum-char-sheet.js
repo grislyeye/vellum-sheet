@@ -20,7 +20,7 @@ class Character extends LitElement {
     return css`
     :host {
       display: block;
-      font-size: 10pt;
+      font-size: 8pt;
       font-family: sans-serif;
     }
 
@@ -45,6 +45,7 @@ class Character extends LitElement {
     .character-content vellum-sheet-box ul li {
       margin: 0.5em;
       padding: 0;
+      font-size: 8pt;
     }
 
     .character-content h1 {
@@ -59,7 +60,7 @@ class Character extends LitElement {
       border: 0;
       border-top: 1px black solid;
       font-weight: bold;
-      font-size: 0.8em;
+      font-size: 1em;
       text-transform: uppercase;
       padding:  0.2em 0 0 0;
       margin: 0;
@@ -247,28 +248,26 @@ class Character extends LitElement {
       min-height: 5.5em;
     }
 
-    /* .attacks */
+    /* attacks */
 
-    .character-content .attacks {
+    .character-content #attacks {
       grid-column: 3 / 5;
       grid-row: 3 / 4;
-      border: 1px var(--char-sheet-border-color, black) solid;
       min-height: 10em;
-      font-size: 0.8em;
     }
 
-    .character-content .attacks table {
+    .character-content #attacks table {
       width: 100%;
       border-spacing: 0.5em;
     }
 
-    .character-content .attacks table th {
+    .character-content #attacks table th {
       text-transform: uppercase;
       font-size: 0.7em;
       font-weight: normal;
     }
 
-    .character-content .attacks table td {
+    .character-content #attacks table td {
       background: lightgrey;
       text-align: center;
       height: 1.5em;
@@ -483,7 +482,7 @@ class Character extends LitElement {
 
         </vellum-sheet-group>
 
-        <div class="attacks group list">
+        <vellum-sheet-box id="attacks" title="Attacks &amp; Spellcasting">
           <table>
             <thead>
               <tr>
@@ -500,9 +499,7 @@ class Character extends LitElement {
           <ul>
             ${this.character.attackNotes ? this.character.attackNotes.map(item => html`<li>*${item}</li>`) : html``}
           </ul>
-
-          <h2>Attacks &amp; Spellcasting</h2>
-        </div>
+        </vellum-sheet-box>
 
         <div class="passive-perception value">
           <h2>Passive Wisdom (Perception)</h2>

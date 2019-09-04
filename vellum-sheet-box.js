@@ -17,11 +17,6 @@ class SheetBox extends LitElement {
       justify-content: space-between;
     }
 
-    ::slotted(*) {
-      font-size: 0.8em;
-      font-family: sans-serif;
-    }
-
     ::slotted(ul) {
       margin: 0;
       padding: 0;
@@ -35,7 +30,7 @@ class SheetBox extends LitElement {
       border: 0;
       border-top: 1px black solid;
       font-weight: bold;
-      font-size: 0.8em;
+      font-size: inherit;
       text-transform: uppercase;
       padding:  0.2em 0 0 0;
       margin: 1em 0 0 0;
