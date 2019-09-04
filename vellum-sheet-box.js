@@ -41,7 +41,7 @@ class SheetBox extends LitElement {
   render() {
     return html`
     <slot></slot>
-    <h2>${this.title}</h2>`
+    ${this.title ? html`<h2>${this.title}</h2>` : html``}`
   }
 
 }
