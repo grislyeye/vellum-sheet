@@ -19,6 +19,7 @@ class SheetField extends LitElement {
       text-align: left;
       border: 0;
       font-weight: bold;
+      border-bottom: 1px black solid;
     }
 
     :host(.small) p {
@@ -32,7 +33,6 @@ class SheetField extends LitElement {
       padding: 0.2em 0 0 0;
       margin: 0;
       color: black;
-      border-top: 1px black solid;
       font-weight: normal;
     }`
 
@@ -42,14 +42,23 @@ class SheetField extends LitElement {
     return {
       label: {
         type: String
+      },
+      lines: {
+        type: Number
       }
     }
+  }
+
+  constructor() {
+    super()
+    this.lines = 1
   }
 
   render() {
     return html`
     <div class="content">
       <p><slot></slot></p>
+      ${this.lines > 1 ? [...Array(this.lines - 1)].map(a => html`<p>&nbsp;</p>`) : html``}
       <h2>${this.label}</h2>
     </div>`
   }
