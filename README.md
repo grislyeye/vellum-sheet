@@ -6,6 +6,8 @@ Web component for displaying RPG sheets and 5th Edition RPG character sheets. Fe
   * Simpler (just one import vs 5)
   * Theme-able
 
+![Screenshot](demo/screenshot.png)
+
 To install:
 
 ```sh
