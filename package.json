@@ -13,18 +13,18 @@
   ],
   "license": "Apache 2.0",
   "dependencies": {
-    "lit-element": "^2.2.1",
+    "lit-element": "^2.4.0",
     "microtesia.js": "^0.1.2"
   },
   "devDependencies": {
-    "eslint": "^6.1.0",
-    "eslint-config-standard": "^13.0.1",
-    "eslint-plugin-html": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-lit": "^1.1.1",
-    "eslint-plugin-node": "^9.1.0",
+    "eslint": "^7.7.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-html": "^6.0.3",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-lit": "^1.2.2",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.1",
     "polymer-cli": "^1.9.11"
   },
   "scripts": {
