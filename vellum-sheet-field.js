@@ -18,7 +18,6 @@ class SheetField extends LitElement {
       margin: 0;
       text-align: left;
       border: 0;
-      font-weight: bold;
       border-bottom: 1px black solid;
     }
 
