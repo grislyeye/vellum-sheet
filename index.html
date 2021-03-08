@@ -10,240 +10,140 @@
 
   <body>
 
-    <section>
-      <h1>Empty Character Sheet</h1>
+    <section class="sheet">
 
-      <vellum-char-sheet id="empty" itemscope itemtype="http://grislyeye.github.io/vellum-schemas/character.html" style="width: 750px;">
-      </vellum-char-sheet>
-
-      <h1>Example Character Sheet</h1>
-
-      <vellum-char-sheet id="bruenor" itemscope itemtype="http://grislyeye.github.io/vellum-schemas/character.html" style="width: 750px;">
+      <vellum-sheet class="custom npc note">
 
         <header>
-          <h1 itemprop="name">Bruenor</h1>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
         </header>
 
-        <section>
-          <dl>
-            <dt>Class</dt><dd itemprop="class">Fighter</dd>
-            <dt>Level</dt><dd itemprop="level">1</dd>
-            <dt>Race</dt><dd itemprop="race">Mountain Dwarf</dd>
-            <dt>Background</dt><dd itemprop="background">Folk Hero</dd>
-            <dt>Alignment</dt><dd itemprop="alignment">Lawful good</dd>
-          </dl>
-        </section>
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
 
-        <section>
-          <dl>
-            <dt>Strength</dt><dd itemprop="strength">15</dd>
-            <dt>Dexterity</dt><dd itemprop="dexterity">10</dd>
-            <dt>Constitution</dt><dd itemprop="constitution">14</dd>
-            <dt>Intelligence</dt><dd itemprop="intelligence">8</dd>
-            <dt>Wisdom</dt><dd itemprop="wisdom">13</dd>
-            <dt>Charisma</dt><dd itemprop="charisma">12</dd>
-          </dl>
-        </section>
+      </vellum-sheet>
 
-        <section>
-          <ul>
-            <li itemprop="skills">Animal Handling</li>
-            <li itemprop="skills">History</li>
-            <li itemprop="skills">Intimidation</li>
-            <li itemprop="skills">Survival</li>
-          </ul>
-        </section>
+      <vellum-sheet class="custom npc note">
 
-        <section>
-          <ul>
-            <li itemprop="saving-throws">Strength</li>
-            <li itemprop="saving-throws">Constitution</li>
-          </ul>
-        </section>
-
-        <section>
-          <ul>
-            <li itemprop="ac">19</li>
-            <li itemprop="max-hit-points">13</li>
-            <li itemprop="hit-dice">d10</li>
-            <li itemprop="size">Medium</li>
-            <li itemprop="speed">25</li>
-          </ul>
-        </section>
-
-        <section>
-          <ul>
-            <li itemscope itemprop="features"><span itemprop="name">Darkvision.</span> <span itemprop="description">you see in dim light within a 60-foot radius of you as if it were bright light, and in darkness in that radius as if it were dim  light. You can’t discern color in darkness, only  shades of gray.</span></li>
-            <li itemscope itemprop="features"><span itemprop="name">Dwarven Resilience.</span> <span itemprop="description">You have advantage on saving throws against poison, and you have resistance against poison damage.</span></li>
-            <li itemscope itemprop="features"><span itemprop="name">Stonecutting.</span> <span itemprop="description">Whenever you make an Intelligence (History) check related to the origin of stonework, you are considered proficient in the History skill and add double your proficiency bonus to the check.</span></li>
-            <li itemscope itemprop="features"><span itemprop="name">Fighting style: defense.</span> <span itemprop="description">While you are wearing armor, you gain a +1 bonus to AC. this bonus is already included in your AC.</span></li>
-            <li itemscope itemprop="features"><span itemprop="name">Second wind.</span> <span itemprop="description">You have a limited well of stamina you can draw on to protect yourself from harm. you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.</span></li>
-            <li itemscope itemprop="features"><span itemprop="name">Rustic hospitality.</span> <span itemprop="description">You can finda  place to hide, rest, or recuperate among other commoners, unless you have shown yourself to be a danger to them.</span></li>
-          </ul>
-        </section>
-
-        <section>
-          <ul>
-            <li itemprop="other-proficiencies">Common</li>
-            <li itemprop="other-proficiencies">Dwarvish</li>
-            <li itemprop="other-proficiencies">All armor</li>
-            <li itemprop="other-proficiencies">Shields</li>
-            <li itemprop="other-proficiencies">Simple weapons</li>
-            <li itemprop="other-proficiencies">Martial weapons</li>
-            <li itemprop="other-proficiencies">Throwing hammer</li>
-            <li itemprop="other-proficiencies">Smith's tools'</li>
-          </ul>
-        </section>
-
-        <section>
-          <ul>
-            <li itemprop="equipment">Chainmail</li>
-            <li itemprop="equipment">Battleaxe</li>
-            <li itemprop="equipment">Shield</li>
-            <li itemprop="equipment">2x handaxes</li>
-            <li itemprop="equipment">Dungeoneer's pack'</li>
-            <li itemprop="equipment">Smith's tools</li>
-            <li itemprop="equipment">Iron pot</li>
-            <li itemprop="equipment">Shovel</li>
-            <li itemprop="equipment">Set of common clothes</li>
-            <li itemprop="equipment">Belt pouch containing 10gp</li>
-          </ul>
-        </section>
-
-        <section>
-          <ul>
-            <li itemscope itemprop="attacks"><span itemprop="name">Battleaxe</span> <span itemprop="damage">1d8</span> <span itemprop="type">slashing</span> (<data itemprop="proficient" value="true">proficient</data>)</li>
-            <li itemscope itemprop="attacks"><span itemprop="name">Handaxe</span> <span itemprop="damage">1d6</span> <span itemprop="type">slashing</span> (<data itemprop="proficient" value="true">proficient</data>)</li>
-          </ul>
-        </section>
-
-        <section>
-          <div>
-            <h2>Personality Traits</h2>
-            <p itemprop="personality-traits">My gruff, snarling demeanour hides a soft heart and a genuine affection for my friends.</p>
-          </div>
-
-          <div>
-            <h2>Ideals</h2>
-            <p itemprop="ideals">Fairness. All are equal under the law and non should get preferential treatment.</p>
-          </div>
-
-          <div>
-            <h2>Bonds</h2>
-            <p itemprop="bonds">I aspire to reclaim my homeland, Mithral Hall, from the shadow dragon that drove my people out.</p>
-          </div>
-
-          <div>
-            <h2>Flaws</h2>
-            <p itemprop="flaws">I have a soft spot for orphans and other, wayward souls leading me to show mercy even when it might not be warranted.</p>
-          </div>
-        </section>
-
-      </vellum-char-sheet>
-
-      <h1>Custom Sheet</h1>
-
-      <vellum-sheet class="custom">
         <header>
-          <h2>Campaign Threats</h2>
-          <p>Roll a d3 or d4 to randomly choose one of the following:</p>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
         </header>
 
-        <vellum-sheet-group>
-          <vellum-sheet-field label="Campaign">Black Griffin</vellum-sheet-field>
-        </vellum-sheet-group>
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
 
-        <vellum-sheet-box>
-          <vellum-sheet-field label="Threat Name">1.</vellum-sheet-field>
+      </vellum-sheet>
 
-          <vellum-sheet-field class="small" label="Notes" lines="4"></vellum-sheet-field>
+      <vellum-sheet class="custom npc note">
 
-          <h3>Agenda</h3>
+        <header>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
+        </header>
 
-          <table>
-            <tr>
-              <td><input type="checkbox"><input type="checkbox"><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-          </table>
-        </vellum-sheet-box>
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
 
-        <vellum-sheet-box>
-          <vellum-sheet-field label="Threat Name">2.</vellum-sheet-field>
+      </vellum-sheet>
 
-          <vellum-sheet-field class="small" label="Notes" lines="4"></vellum-sheet-field>
 
-          <h3>Agenda</h3>
+      <vellum-sheet class="custom npc note">
 
-          <table>
-            <tr>
-              <td><input type="checkbox"><input type="checkbox"><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-          </table>
-        </vellum-sheet-box>
+        <header>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
+        </header>
 
-        <vellum-sheet-box>
-          <vellum-sheet-field label="Threat Name">3.</vellum-sheet-field>
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
 
-          <vellum-sheet-field class="small" label="Notes" lines="4"></vellum-sheet-field>
+      </vellum-sheet>
 
-          <h3>Agenda</h3>
+      <vellum-sheet class="custom npc note">
 
-          <table>
-            <tr>
-              <td><input type="checkbox"><input type="checkbox"><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-          </table>
-        </vellum-sheet-box>
+        <header>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
+        </header>
 
-        <vellum-sheet-box>
-          <vellum-sheet-field label="Threat Name">4.</vellum-sheet-field>
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
 
-          <vellum-sheet-field class="small" label="Notes" lines="4"></vellum-sheet-field>
+      </vellum-sheet>
 
-          <h3>Agenda</h3>
+      <vellum-sheet class="custom npc note">
 
-          <table>
-            <tr>
-              <td><input type="checkbox"><input type="checkbox"><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td class="notes"><vellum-sheet-field class="small" lines="2"></vellum-sheet-field></td>
-            </tr>
-          </table>
-        </vellum-sheet-box>
+        <header>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
+        </header>
+
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
+
+      </vellum-sheet>
+
+
+      <vellum-sheet class="custom npc note">
+
+        <header>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
+        </header>
+
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
+
+      </vellum-sheet>
+
+      <vellum-sheet class="custom npc note">
+
+        <header>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
+        </header>
+
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
+
+      </vellum-sheet>
+
+      <vellum-sheet class="custom npc note">
+
+        <header>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
+        </header>
+
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
+
+      </vellum-sheet>
+
+
+      <vellum-sheet class="custom npc note">
+
+        <header>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
+        </header>
+
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
+
+      </vellum-sheet>
+
+      <vellum-sheet class="custom npc note">
+
+        <header>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
+        </header>
+
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
+
+      </vellum-sheet>
+
+      <vellum-sheet class="custom npc note">
+
+        <header>
+          <h3>NPC</h3>
+          <vellum-sheet-field label="Name"></vellum-sheet-field>
+        </header>
+
+        <vellum-sheet-field class="small" label="Notes" lines="6"></vellum-sheet-field>
 
       </vellum-sheet>
 
