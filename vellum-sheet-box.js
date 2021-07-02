@@ -35,12 +35,35 @@ class SheetBox extends LitElement {
       padding:  0.2em 0 0 0;
       margin: 1em 0 0 0;
       color: black;
+    }
+
+    textarea {
+      font-family: inherit;
+      background: transparent;
+      border: none;
+      height: 100%;
+      width: 100%;
+      resize: none;
+      line-height: 170%;
     }`
+  }
+
+  static get properties() {
+    return {
+      editable: {
+        type: Boolean
+      }
+    }
+  }
+
+  constructor() {
+    super()
+    this.editable = false
   }
 
   render() {
     return html`
-    <slot></slot>
+    ${this.editable ? html`<textarea></textarea>` : html`<slot></slot>`}
     ${this.title ? html`<h2>${this.title}</h2>` : html``}`
   }
 
