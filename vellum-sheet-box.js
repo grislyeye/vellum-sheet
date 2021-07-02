@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element'
-import './vellum-sheet-box.js'
+import { StoreValueBehaviour } from './lib/store-value-behaviour.js'
 
-class SheetBox extends LitElement {
+class SheetBox extends StoreValueBehaviour(LitElement) {
 
   static get is() { return 'vellum-sheet-box' }
 
@@ -50,6 +50,9 @@ class SheetBox extends LitElement {
 
   static get properties() {
     return {
+      label: {
+        type: String
+      },
       editable: {
         type: Boolean
       }
@@ -63,8 +66,8 @@ class SheetBox extends LitElement {
 
   render() {
     return html`
-    ${this.editable ? html`<textarea></textarea>` : html`<slot></slot>`}
-    ${this.title ? html`<h2>${this.title}</h2>` : html``}`
+    ${this.editable ? html`<textarea @input=${this.saveValue}>${this.value}</textarea>` : html`<slot></slot>`}
+    ${this.label ? html`<h2>${this.label}</h2>` : html``}`
   }
 
 }

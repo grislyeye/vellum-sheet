@@ -1,6 +1,7 @@
 import { LitElement, html, css } from 'lit-element'
+import { StoreValueBehaviour } from './lib/store-value-behaviour.js'
 
-class SheetField extends LitElement {
+class SheetField extends StoreValueBehaviour(LitElement) {
 
   static get is() { return 'vellum-sheet-field' }
 
@@ -103,10 +104,14 @@ class SheetField extends LitElement {
   render() {
     return html`
     <div class="content">
-      ${this.editable ? html`<input type="text">` : html`<p><slot></slot></p>`}
+      ${this.editable ? this._renderInput() : html`<p><slot></slot></p>`}
       ${this.lines > 1 ? [...Array(this.lines - 1)].map(a => html`<p>&nbsp;</p>`) : html``}
       <h2>${this.label}</h2>
     </div>`
+  }
+
+  _renderInput() {
+    return html`<input type="text" @input=${this.saveValue} value="${this.value}">`
   }
 
 }

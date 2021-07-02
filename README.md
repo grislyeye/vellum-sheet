@@ -159,7 +159,7 @@ You can define your own custom sheets using the `<vellum-sheet>` and `<vellum-sh
 
 ```html
 <vellum-sheet>
-  <vellum-sheet-box title="Box 1">
+  <vellum-sheet-box label="Box 1">
     <ul>
       <li>Box content 1</li>
       <li>Box content 2</li>
@@ -188,7 +188,7 @@ Custom sheets can be composed on the following helper elements:
 A sheet box is a bordered container for any content, typically a list of items:
 
 ```html
-<vellum-sheet-box title="Box Title">
+<vellum-sheet-box label="Box Title">
   <ul>
     <li>Box content 1</li>
     <li>Box content 2</li>

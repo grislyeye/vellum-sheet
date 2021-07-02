@@ -383,7 +383,7 @@ class Character extends LitElement {
             <p>${this.character.proficiencyBonus.pretty}</p>
           </div>
 
-          <vellum-sheet-box id="saving-throws" title="Saving Throws">
+          <vellum-sheet-box id="saving-throws" label="Saving Throws">
             <ul>
               <li>${this.character.savingThrows.strength ? this.character.savingThrows.strength.pretty : html``} Strength</li>
               <li>${this.character.savingThrows.dexterity ? this.character.savingThrows.dexterity.pretty : html``} Dexterity</li>
@@ -394,7 +394,7 @@ class Character extends LitElement {
             </ul>
           </vellum-sheet-box>
 
-          <vellum-sheet-box id="skills" title="Skills">
+          <vellum-sheet-box id="skills" label="Skills">
             <ul>
               <li>${this.character.skills.acrobatics ? this.character.skills.acrobatics.pretty : html``} Acrobatics</li>
               <li>${this.character.skills.animalHandling ? this.character.skills.animalHandling.pretty : html``} Animal Handling</li>
@@ -455,25 +455,25 @@ class Character extends LitElement {
 
         <vellum-sheet-group id="characteristics">
 
-          <vellum-sheet-box id="personality-traits" title="Personality Traits">
+          <vellum-sheet-box id="personality-traits" label="Personality Traits">
             <ul>
               ${Array.isArray(this.character['personality-traits']) ? this.renderList(this.character['personality-traits']) : html`<li>${this.character['personality-traits']}</li>`}
             </ul>
           </vellum-sheet-box>
 
-          <vellum-sheet-box id="ideals" title="Ideals">
+          <vellum-sheet-box id="ideals" label="Ideals">
             <ul>
               ${Array.isArray(this.character.ideals) ? this.renderList(this.character.ideals) : html`<li>${this.character.ideals}</li>`}
             </ul>
           </vellum-sheet-box>
 
-          <vellum-sheet-box id="bonds" title="Bonds">
+          <vellum-sheet-box id="bonds" label="Bonds">
             <ul>
               ${Array.isArray(this.character.bonds) ? this.renderList(this.character.bonds) : html`<li>${this.character.bonds}</li>`}
             </ul>
           </vellum-sheet-box>
 
-          <vellum-sheet-box id="flaws" title="Flaws">
+          <vellum-sheet-box id="flaws" label="Flaws">
             <ul>
               ${Array.isArray(this.character.flaws) ? this.renderList(this.character.flaws) : html`<li>${this.character.flaws}</li>`}
               </template>
@@ -482,7 +482,7 @@ class Character extends LitElement {
 
         </vellum-sheet-group>
 
-        <vellum-sheet-box id="attacks" title="Attacks &amp; Spellcasting">
+        <vellum-sheet-box id="attacks" label="Attacks &amp; Spellcasting">
           <table>
             <thead>
               <tr>
@@ -506,19 +506,19 @@ class Character extends LitElement {
           <p>${this.character.skills.perception ? this.character.skills.perception.passive : html``}</p>
         </div>
 
-        <vellum-sheet-box id="equipment" title="Equipment">
+        <vellum-sheet-box id="equipment" label="Equipment">
           <ul>
             ${Array.isArray(this.character.equipment) ? this.renderList(this.character.equipment) : html`<li>${this.character.equipment}</li>`}
           </ul>
         </vellum-sheet-box>
 
-        <vellum-sheet-box id="features" title="Features &amp; Traits">
+        <vellum-sheet-box id="features" label="Features &amp; Traits">
           <ul>
             ${Array.isArray(this.character.features) ? this.renderFeatures(this.character.features) : html`<li>${this.character.features}</li>`}
           </ul>
         </vellum-sheet-box>
 
-        <vellum-sheet-box id="other-proficiencies" title="Other Proficiencies &amp; Languages">
+        <vellum-sheet-box id="other-proficiencies" label="Other Proficiencies &amp; Languages">
           <ul>
             ${Array.isArray(this.character['other-proficiencies']) ? this.renderList(this.character['other-proficiencies']) : html`<li>${this.character['other-proficiencies']}</li>`}
           </ul>
