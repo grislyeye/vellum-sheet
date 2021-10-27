@@ -55,6 +55,12 @@ class SheetBox extends StoreValueBehaviour(LitElement) {
       },
       editable: {
         type: Boolean
+      },
+      docid: {
+        type: String
+      },
+      value: {
+        type: String
       }
     }
   }
@@ -66,7 +72,7 @@ class SheetBox extends StoreValueBehaviour(LitElement) {
 
   render() {
     return html`
-    ${this.editable ? html`<textarea @input=${this.saveValue}>${this.value}</textarea>` : html`<slot></slot>`}
+    ${this.editable ? html`<textarea id="input" @input=${this.saveValue}>${this.value}</textarea>` : html`<slot></slot>`}
     ${this.label ? html`<h2>${this.label}</h2>` : html``}`
   }
 

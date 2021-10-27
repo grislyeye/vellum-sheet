@@ -91,6 +91,12 @@ class SheetField extends StoreValueBehaviour(LitElement) {
       },
       editable: {
         type: Boolean
+      },
+      docid: {
+        type: String
+      },
+      value: {
+        type: String
       }
     }
   }
@@ -111,7 +117,7 @@ class SheetField extends StoreValueBehaviour(LitElement) {
   }
 
   _renderInput() {
-    return html`<input type="text" @input=${this.saveValue} value="${this.value}">`
+    return html`<input id="input" type="text" @input=${this.saveValue} value="${this.value}">`
   }
 
 }
