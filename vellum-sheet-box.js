@@ -10,7 +10,8 @@ class SheetBox extends StoreValueBehaviour(LitElement) {
     :host {
       background: white;
       border: 1px var(--char-sheet-border-color, black) solid;
-      padding: 0.5em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
       border-radius: 5px;
       display: flex;
       flex-direction: column;
@@ -37,7 +38,8 @@ class SheetBox extends StoreValueBehaviour(LitElement) {
       color: black;
     }
 
-    textarea {
+    textarea,
+    p {
       font-family: inherit;
       background: transparent;
       border: none;
@@ -72,7 +74,7 @@ class SheetBox extends StoreValueBehaviour(LitElement) {
 
   render() {
     return html`
-    ${this.editable ? html`<textarea id="input" @input=${this.saveValue}>${this.value}</textarea>` : html`<slot></slot>`}
+    ${this.editable ? html`<textarea id="input" @input=${this.saveValue}>${this.value}</textarea>` : html`<p><slot></slot></p>`}
     ${this.label ? html`<h2>${this.label}</h2>` : html``}`
   }
 

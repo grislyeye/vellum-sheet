@@ -37,7 +37,8 @@ class SheetField extends StoreValueBehaviour(LitElement) {
       font-weight: normal;
     }
 
-    input[type="text"] {
+    input[type="text"],
+    p {
       font-size: 2em;
       font-family: inherit;
       background: transparent;
@@ -51,9 +52,15 @@ class SheetField extends StoreValueBehaviour(LitElement) {
       text-align: inherit;
     }
 
-    :host(.small) input[type="text"] {
+    :host(.small) input[type="text"],
+    :host(.small) p {
       min-height: 1.2em;
       font-size: 1.2em;
+    }
+
+    :host([class~="horizontal"]) {
+      width: 100%;
+      height: 100%;
     }
 
     :host([class~="horizontal"]) .content {
@@ -62,21 +69,21 @@ class SheetField extends StoreValueBehaviour(LitElement) {
     }
 
     :host([class~="horizontal"]) .content > * {
-      margin-top: auto;
-      margin-bottom: auto;
     }
 
     :host([class~="horizontal"]) input[type="text"],
     :host([class~="horizontal"]) p {
       border: 0;
-      border-right: 1px black solid;
       text-align: center;
       width: var(--vellum-sheet-input-width, 50%);
       font-size: inherit;
     }
 
     :host([class~="horizontal"]) h2 {
+      border-left: 1px black solid;
       padding-left: 0.5em;
+      padding-top: 0.8em;
+      padding-bottom: 0.8em;
       font-size: 12px;
     }`
   }
@@ -111,7 +118,7 @@ class SheetField extends StoreValueBehaviour(LitElement) {
     return html`
     <div class="content">
       ${this.editable ? this._renderInput() : html`<p><slot></slot></p>`}
-      ${this.lines > 1 ? [...Array(this.lines - 1)].map(a => html`<p>&nbsp;</p>`) : html``}
+      ${this.lines > 1 ? [...Array(this.lines - 1)].map(a => html`<p></p>`) : html``}
       <h2>${this.label}</h2>
     </div>`
   }
