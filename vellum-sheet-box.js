@@ -79,6 +79,10 @@ class SheetBox extends StoreValueBehaviour(LitElement) {
     this.editable = this.editable === true
   }
 
+  updateValue(event) {
+    if (this.editable) this.value = event.target.value
+  }
+
   render() {
     return html`
     ${this.editable || this.sync ? this.renderEditable() : html`<p><slot></slot></p>`}
@@ -86,7 +90,7 @@ class SheetBox extends StoreValueBehaviour(LitElement) {
   }
 
   renderEditable() {
-    return html`<textarea id="input" ?disabled=${!this.editable} @input=${this.storeValue}>${this.value || ''}</textarea>`
+    return html`<textarea id="input" ?disabled=${!this.editable} @input=${this.updateValue}>${this.value || ''}</textarea>`
   }
 
 }

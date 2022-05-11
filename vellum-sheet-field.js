@@ -125,6 +125,10 @@ class SheetField extends StoreValueBehaviour(LitElement) {
     this.editable = this.editable === true
   }
 
+  updateValue(event) {
+    if (this.editable) this.value = event.target.value
+  }
+
   render() {
     return html`
     <div class="content">
@@ -135,7 +139,7 @@ class SheetField extends StoreValueBehaviour(LitElement) {
   }
 
   _renderInput() {
-    return html`<input id="input" type="text" ?disabled=${!this.editable} @input=${this.storeValue} value="${this.value || ''}">`
+    return html`<input id="input" type="text" ?disabled=${!this.editable} @input=${this.updateValue} value="${this.value || ''}">`
   }
 
 }
