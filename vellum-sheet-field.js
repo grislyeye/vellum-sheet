@@ -99,6 +99,12 @@ class SheetField extends StoreValueBehaviour(LitElement) {
       editable: {
         type: Boolean
       },
+      store: {
+        type: Boolean
+      },
+      sync: {
+        type: Boolean
+      },
       docid: {
         type: String
       },
@@ -111,20 +117,25 @@ class SheetField extends StoreValueBehaviour(LitElement) {
   constructor() {
     super()
     this.lines = 1
-    this.editable = false
+  }
+
+  connectedCallback() {
+    super.connectedCallback()
+    this.sync = this.sync === true
+    this.editable = this.editable === true
   }
 
   render() {
     return html`
     <div class="content">
-      ${this.editable ? this._renderInput() : html`<p><slot></slot></p>`}
+      ${this.editable || this.sync ? this._renderInput() : html`<p><slot></slot></p>`}
       ${this.lines > 1 ? [...Array(this.lines - 1)].map(a => html`<p></p>`) : html``}
       <h2>${this.label}</h2>
     </div>`
   }
 
   _renderInput() {
-    return html`<input id="input" type="text" @input=${this.saveValue} value="${this.value}">`
+    return html`<input id="input" type="text" ?disabled=${!this.editable} @input=${this.storeValue} value="${this.value || ''}">`
   }
 
 }

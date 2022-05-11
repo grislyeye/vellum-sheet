@@ -58,6 +58,12 @@ class SheetBox extends StoreValueBehaviour(LitElement) {
       editable: {
         type: Boolean
       },
+      sync: {
+        type: Boolean
+      },
+      store: {
+        type: Boolean
+      },
       docid: {
         type: String
       },
@@ -67,15 +73,20 @@ class SheetBox extends StoreValueBehaviour(LitElement) {
     }
   }
 
-  constructor() {
-    super()
-    this.editable = false
+  connectedCallback() {
+    super.connectedCallback()
+    this.sync = this.sync === true
+    this.editable = this.editable === true
   }
 
   render() {
     return html`
-    ${this.editable ? html`<textarea id="input" @input=${this.saveValue}>${this.value}</textarea>` : html`<p><slot></slot></p>`}
+    ${this.editable || this.sync ? this.renderEditable() : html`<p><slot></slot></p>`}
     ${this.label ? html`<h2>${this.label}</h2>` : html``}`
+  }
+
+  renderEditable() {
+    return html`<textarea id="input" ?disabled=${!this.editable} @input=${this.storeValue}>${this.value || ''}</textarea>`
   }
 
 }
