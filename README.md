@@ -211,3 +211,7 @@ To set-up your environment execute:
 To run linting and test:
 
     $ npm test
+
+To run local demo:
+
+    $ npm run start
