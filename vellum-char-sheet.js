@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit-element'
-import 'microtesia.js/lib/microtesia.js'
+import { parseMicrodata } from 'microtesia.js/lib/microtesia.js'
 import { character } from './lib/character.js'
 import './vellum-sheet.js'
 import './vellum-sheet-box.js'

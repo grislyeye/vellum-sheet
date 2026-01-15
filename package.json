@@ -2,6 +2,7 @@
   "name": "vellum-sheet",
   "version": "0.5.2",
   "description": "Web component for displaying 5th Edition D&D character sheets",
+  "type": "module",
   "keywords": [
     "lit",
     "lit-element",
@@ -13,10 +14,11 @@
   ],
   "license": "Apache 2.0",
   "dependencies": {
-    "lit-element": "^4.2.1",
+    "lit-element": "^4.2.2",
     "microtesia.js": "^0.1.2"
   },
   "devDependencies": {
+    "esbuild": "^0.27.2",
     "eslint": "^8.32.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-html": "^7.1.0",
@@ -25,15 +27,16 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-standard": "^4.1.0",
-    "polymer-cli": "^1.9.11",
-    "rimraf": "^6.1.0",
-    "rollup": "^4.52.5",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rimraf": "^6.1.2"
   },
   "scripts": {
-    "build": "npm test && rollup -c",
-    "test": "eslint *.js lib/*.js && polymer lint",
-    "start": "polymer serve --open",
-    "clean": "rimraf dist"
+    "build": "npm run clean && npm run build:prod",
+    "build:prod": "esbuild *.js --bundle --minify --sourcemap=external --outdir=dist",
+    "build:watch": "esbuild *.js --bundle --watch --outdir=dist --servedir=./",
+    "build:analyze": "cem analyze --litelement",
+    "test": "eslint *.js lib/*.js",
+    "start": "npm run build:watch",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run build"
   }
 }
